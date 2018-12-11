@@ -1,0 +1,3 @@
+rootProject.name = 'Good_Samaratin_Frontend'
+
+include ':app'
