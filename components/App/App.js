@@ -45,6 +45,8 @@ export default class App extends Component {
           </Header>
           <Content>
             <EmergencyList emergencies={this.state.emergencies} />
+          </Content>
+          <Content>
             <Home />
           </Content>
           <Footer>
