@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import Header from '../Header/Header'
+import Navbar from '../Navbar/Navbar'
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
       <View>
-        <Header />
+        <Navbar />
       </View>
     );
   }
