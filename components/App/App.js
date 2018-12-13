@@ -39,8 +39,8 @@ export default class App extends Component {
       return (
         <View>
           <Navbar />
-          <Home />
           <EmergencyList emergencies={this.state.emergencies} />
+          <Home />
           <CallForHelpButton />
         </View>
       );

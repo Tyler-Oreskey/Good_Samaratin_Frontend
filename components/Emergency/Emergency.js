@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Image, Card, ListItem, Button, Icon } from 'react-native'
-import CardView from 'react-native-cardview'
+import { View, Text, Image, ListItem, Button, Icon, ScrollView, StyleSheet, TouchableHighlight} from 'react-native'
+import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-cards';
 
 class Emergency extends Component {
   render() {
@@ -8,16 +8,13 @@ class Emergency extends Component {
     const { emergency: { emergency_name}} = this.props
 
     return (
-      <CardView
-          cardElevation={2}
-          cardMaxElevation={2}
-          cornerRadius={5}>
-          <Text>
-              {emergency_name}
-          </Text>
-      </CardView>
+      <Text>{emergency_name}</Text>
     );
   }
 }
+
+  const styles = StyleSheet.create({
+
+  });
 
 export default Emergency;
