@@ -18,13 +18,12 @@ export default class CallForHelpButton extends Component {
     
     render() {
         return (
-                    <FooterTab onPress={this.callForHelp}>
-                        <Button vertical onPress={this.callForHelp}>
-                            <Icon ios='ios-medkit' name='Call For Help' style={{color:'red'}}/>
-                            <Text>Call For Help</Text>
-                        </Button>
-                    </FooterTab>
-                
+            <FooterTab onPress={this.callForHelp}>
+                <Button vertical onPress={this.callForHelp}>
+                    <Icon ios='ios-medkit' name='Call For Help' style={{color:'red'}}/>
+                    <Text>Call For Help</Text>
+                </Button>
+            </FooterTab>  
         )
     }
 }

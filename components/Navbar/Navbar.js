@@ -24,17 +24,12 @@ const titleConfig = {
 export default class Navbar extends Component {
   render() {
       return (
-        <View>
-            <View style={styles.container}>
               <NavigationBar
-                style={styles.navbar}
                 leftButton={leftButtonConfig}
                 title={titleConfig}
                 rightButton={rightButtonConfig}
               />
-            </View>
-        </View>
-      );
+      )
     }
   }
 
