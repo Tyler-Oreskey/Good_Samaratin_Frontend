@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Navbar from '../Navbar/Navbar'
 import Home from '../Home/Home'
+import EmergencyList from '../EmergencyList/EmergencyList'
 
 export default class App extends Component {
+
   constructor(props){
     super(props)
     this.state = {
@@ -31,16 +33,16 @@ export default class App extends Component {
   }
 
 
-  render() {
-    return (
-      <View>
-        <Navbar />
-        <Home />
-
-      </View>
-    );
+   render() {
+      return (
+        <View>
+          <Navbar />
+          <Home />
+          <EmergencyList emergencies={this.state.emergencies} />
+        </View>
+      );
+    }
   }
-}
 
 const styles = StyleSheet.create({
 
