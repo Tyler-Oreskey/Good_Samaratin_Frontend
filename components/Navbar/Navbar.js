@@ -33,9 +33,9 @@ export default class Navbar extends Component {
     }
   }
 
-  const styles = StyleSheet.create({
-    container: {
-      marginTop: 20,
-      flex: 1,
-    },
-  });
+  // const styles = StyleSheet.create({
+  //   container: {
+  //     marginTop: 20,
+  //     flex: 1,
+  //   },
+  // });
