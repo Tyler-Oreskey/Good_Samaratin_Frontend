@@ -40,9 +40,7 @@ export default class App extends Component {
    render() {
       return (
         <Container>
-          <Header>
             <Navbar />
-          </Header>
           <Content>
             <EmergencyList emergencies={this.state.emergencies} />
           </Content>
@@ -57,6 +55,3 @@ export default class App extends Component {
     }
   }
 
-const styles = StyleSheet.create({
-
-})
