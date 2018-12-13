@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Navbar from '../Navbar/Navbar'
+import CallForHelpButton from '../CallForHelpButton/CallForHelpButton'
 
 export default class App extends Component {
   constructor(props){
@@ -13,6 +14,7 @@ export default class App extends Component {
     return (
       <View>
         <Navbar />
+        <CallForHelpButton />
       </View>
     );
   }
