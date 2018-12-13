@@ -24,23 +24,18 @@ const titleConfig = {
 export default class Navbar extends Component {
   render() {
       return (
-        <View>
-            <View style={styles.container}>
               <NavigationBar
-                style={styles.navbar}
                 leftButton={leftButtonConfig}
                 title={titleConfig}
                 rightButton={rightButtonConfig}
               />
-            </View>
-        </View>
-      );
+      )
     }
   }
 
-  const styles = StyleSheet.create({
-    container: {
-      marginTop: 20,
-      flex: 1,
-    },
-  });
+  // const styles = StyleSheet.create({
+  //   container: {
+  //     marginTop: 20,
+  //     flex: 1,
+  //   },
+  // });

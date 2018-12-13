@@ -22,7 +22,7 @@ export default class App extends Component {
             <Navbar />
           </Header>
           <Content>
-            <EmergencyPage />
+           <EmergencyPage />
             <Home />
           </Content>
           <Footer>
