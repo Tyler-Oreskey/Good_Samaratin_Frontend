@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Navbar from '../Navbar/Navbar'
+import CallForHelpButton from '../CallForHelpButton/CallForHelpButton'
 import Home from '../Home/Home'
 import EmergencyList from '../EmergencyList/EmergencyList'
+
 
 export default class App extends Component {
 
@@ -39,6 +41,7 @@ export default class App extends Component {
           <Navbar />
           <Home />
           <EmergencyList emergencies={this.state.emergencies} />
+          <CallForHelpButton />
         </View>
       );
     }
