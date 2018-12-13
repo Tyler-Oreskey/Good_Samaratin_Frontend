@@ -43,7 +43,4 @@ export default class Navbar extends Component {
       marginTop: 20,
       flex: 1,
     },
-    title: {
-      color: 'red'
-    }
   });
