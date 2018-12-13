@@ -27,8 +27,6 @@ export default class Login extends Component {
 
     return (
       <View style={styles.container}>
-          <Image style={styles.logo}
-            source={require('./images/Octocat.jpeg')} />
 
           <Text style={styles.heading}>
             Login Through Github
@@ -62,7 +60,7 @@ export default class Login extends Component {
       </View>
     );
   }
-  
+
   onLoginPressed(){
     this.setState({showProgress: true})
 
