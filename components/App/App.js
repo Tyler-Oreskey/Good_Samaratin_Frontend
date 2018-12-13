@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Navbar from '../Navbar/Navbar'
+import Home from '../Home/Home'
 
 export default class App extends Component {
   constructor(props){
@@ -34,7 +35,8 @@ export default class App extends Component {
     return (
       <View>
         <Navbar />
-        <EmergencyList emergencies={this.state.emergencies}
+        <Home />
+
       </View>
     );
   }
