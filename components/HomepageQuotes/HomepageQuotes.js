@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, View, Text} from 'react-native';
-//import { Container } from 'native-base';
-
-
 
 export default class HomepageQuotes extends Component {
 
