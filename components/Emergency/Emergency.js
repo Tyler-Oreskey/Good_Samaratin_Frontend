@@ -18,7 +18,7 @@ class Emergency extends Component {
             <CardButton
               onPress={() => {}}
               title="View"
-              color="#FEB557"
+              color= "#cc2900"
             />
           </CardAction>
         </Card>
