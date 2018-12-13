@@ -13,27 +13,37 @@ const leftButtonConfig = {
 };
 
 const titleConfig = {
-  title: 'Good Samaratin',
+  title: <Text style={{
+    textAlign: 'center',
+    flex: 1,
+    fontSize: 30,
+    fontFamily: 'Arial-BoldItalicMT'
+    }}>Good Samaratin</Text>
 };
 
 export default class Navbar extends Component {
   render() {
       return (
-        <View style={styles.container}>
-          <NavigationBar
-            leftButton={leftButtonConfig}
-            title={titleConfig}
-            rightButton={rightButtonConfig}
-          />
+        <View>
+            <View style={styles.container}>
+              <NavigationBar
+                style={styles.navbar}
+                leftButton={leftButtonConfig}
+                title={titleConfig}
+                rightButton={rightButtonConfig}
+              />
+            </View>
         </View>
       );
     }
   }
+
   const styles = StyleSheet.create({
     container: {
-      marginLeft: 10,
-      marginRight: 10,
       marginTop: 20,
       flex: 1,
     },
+    title: {
+      color: 'red'
+    }
   });
