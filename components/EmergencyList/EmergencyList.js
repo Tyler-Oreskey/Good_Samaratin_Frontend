@@ -8,12 +8,14 @@ class EmergencyList extends Component {
     const { emergencies } = this.props
 
     return (
-      <View style={styles.container}>
-      {emergencies.map((emergency, index) => ( <Emergency key={ index }
-        emergency={emergency}
-        />
-      ))}
-    </View>
+      <View>
+          <View>
+          {emergencies.map((emergency, index) => ( <Emergency key={ index }
+            emergency={emergency}
+            />
+          ))}
+        </View>
+      </View>
     );
   }
 }
