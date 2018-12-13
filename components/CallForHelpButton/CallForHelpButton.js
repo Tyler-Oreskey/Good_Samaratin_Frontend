@@ -1,6 +1,7 @@
-import React from 'react'
-import { TouchableHighlight, Button, View, StyleSheet } from 'react-native'
+import React, { Component } from 'react'
+import { TouchableHighlight, View, StyleSheet } from 'react-native'
 import call from 'react-native-phone-call'
+import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base'
 
 
 const args = {
@@ -8,32 +9,42 @@ const args = {
     prompt: false // Optional boolean property. Determines if the user should be prompt prior to the call 
 }
 
-export default class CallForHelpButton extends React.Component {
+
+export default class CallForHelpButton extends Component {
 
     callForHelp = () => {
         call(args).catch(console.error)
     }
-
+    
     render() {
         return (
-            <View style={styles.buttonContainer}>
-                <TouchableHighlight style={styles.button} onPress={this.callForHelp}>
-                    <Button title={'Help'} onPress={this.callForHelp}/>
-                </TouchableHighlight>
-            </View>
+                    <FooterTab onPress={this.callForHelp}>
+                        <Button vertical onPress={this.callForHelp}>
+                            <Icon ios='ios-medkit' name='Call For Help' style={{color:'red'}}/>
+                            <Text>Call For Help</Text>
+                        </Button>
+                    </FooterTab>
+                
         )
     }
 }
 
-const styles = StyleSheet.create({
-    buttonContainer: {
-        paddingHorizontal: 10,
-        paddingVertical: 30,
-    },
-    button: {
-        backgroundColor: '#DDDDDD',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 50
-    },
-})
+
+
+
+// export default class CallForHelpButton extends React.Component {
+
+
+
+//     render() {
+//         return (
+//             <Container>
+//                 <Button onPress={this.callForHelp} />
+//                     <Text>
+//                          Button
+//                     </Text>
+//                 <Button />
+//             </Container>
+//         )
+//     }
+// }
