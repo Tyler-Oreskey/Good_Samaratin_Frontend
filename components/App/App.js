@@ -4,6 +4,8 @@ import Navbar from '../Navbar/Navbar'
 import CallForHelpButton from '../CallForHelpButton/CallForHelpButton'
 import Home from '../Home/Home'
 import EmergencyList from '../EmergencyList/EmergencyList'
+import { Container, Header, Content, Footer } from 'native-base'
+
 
 
 export default class App extends Component {
@@ -37,16 +39,22 @@ export default class App extends Component {
 
    render() {
       return (
-        <View>
-          <Navbar />
-          <EmergencyList emergencies={this.state.emergencies} />
-          <Home />
-          <CallForHelpButton />
-        </View>
-      );
+        <Container>
+          <Header>
+            <Navbar />
+          </Header>
+          <Content>
+            <EmergencyList emergencies={this.state.emergencies} />
+            <Home />
+          </Content>
+          <Footer>
+            <CallForHelpButton />
+          </Footer>
+        </Container>
+      )
     }
   }
 
 const styles = StyleSheet.create({
 
-});
+})

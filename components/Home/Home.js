@@ -18,13 +18,13 @@ export default class Home extends Component {
         <View>
           <View style={styles.container}>
             <Button
-              style={styles.borderButton}
+              style={styles.buttonStyle}
               title="Quiz"
               color="#F0FFFF"
             />
 
             <Button
-              style={styles.borderButton}
+              style={styles.buttonStyle}
               title="Emergency"
               color="#F0FFFF"
             />
@@ -38,10 +38,6 @@ const height = Dimensions.get('window').height
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 15,
-    marginTop: height * 0.6,
-    width: '100%',
-    height: height * 0.15,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#B22222',
@@ -52,5 +48,14 @@ const styles = StyleSheet.create({
     width: '100%',
     height: height * 0.15,
     borderWidth: 10
-  }
+  },
+  buttonStyle: {
+    marginBottom: 5,
+    marginTop: height * 0.6,
+    width: '100%',
+    height: height * 0.15,
+    borderWidth: 3,
+    borderRadius: 5,
+    margin: 2,
+  },
 });
