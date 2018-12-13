@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Button, Text, StyleSheet } from 'react-native'
+import { TouchableHighlight, Button, View, StyleSheet } from 'react-native'
 import call from 'react-native-phone-call'
 
 
@@ -17,20 +17,23 @@ export default class CallForHelpButton extends React.Component {
     render() {
         return (
             <View style={styles.buttonContainer}>
-                <Button
-                    title={'Help'}
-                    onPress={this.callForHelp} />
+                <TouchableHighlight style={styles.button} onPress={this.callForHelp}>
+                    <Button title={'Help'} onPress={this.callForHelp}/>
+                </TouchableHighlight>
             </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-    },
     buttonContainer: {
-        margin: 60,
+        paddingHorizontal: 10,
+        paddingVertical: 30,
+    },
+    button: {
+        backgroundColor: '#DDDDDD',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 50
     },
 })
