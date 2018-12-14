@@ -5,12 +5,12 @@ import { Router, Scene } from 'react-native-router-flux';
 import { Container, Header, Content, Footer } from 'native-base'
 
 // Pages
-import Homepage from '../Homepage/Homepage'
-import EmergencyPage from '../EmergencyPage/EmergencyPage'
+import Homepage from './pages/Homepage/Homepage'
+import EmergencyPage from './pages/EmergencyPage/EmergencyPage'
 
 // Components
-import Navbar from '../Navbar/Navbar'
-import CallForHelpButton from '../CallForHelpButton/CallForHelpButton'
+import Navbar from './components/Navbar/Navbar'
+import CallForHelpButton from './components/CallForHelpButton/CallForHelpButton'
 
 
 export default class App extends Component {

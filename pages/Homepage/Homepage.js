@@ -4,8 +4,8 @@ import { Actions } from 'react-native-router-flux';
 import { Container, Header, Content, Footer, Button, Left, Right, Body, Title } from 'native-base'
 
 
-import Navbar from '../Navbar/Navbar'
-import HomepageQuotesList from '../HomepageQuotesList/HomepageQuotesList'
+import Navbar from '../../components//Navbar/Navbar'
+import HomepageQuotesList from '../../components/HomepageQuotesList/HomepageQuotesList'
 
 export default class Home extends Component {
   constructor(props){
