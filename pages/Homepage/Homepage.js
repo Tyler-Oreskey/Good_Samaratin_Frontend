@@ -41,17 +41,6 @@ export default class Homepage extends Component {
       return (
         <Container>
           <Navbar />
-          {/* <Header>
-            <Left>
-              <Button onPress= {() => {Actions.login()}}>
-                <Text>Login</Text>
-              </Button>
-            </Left>
-            <Body>
-              <Title>Good Samaritan</Title>
-            </Body>
-            <Right />
-            </Header> */}
           <Container>
             <HomepageQuotes quotes={this.state.quotes} author={this.state.author}/>
             <Content>
@@ -60,11 +49,11 @@ export default class Homepage extends Component {
           </Container>
           <Footer>
             <Content>
-              <Button full large danger onPress= {() => {Actions.emergencies(); }}><Text>Emergency</Text></Button>
+              <Button full large danger onPress= {() => {Actions.emergencies(); }}><Text style={{color: 'whitesmoke'}}>Emergency</Text></Button>
             </Content>
           </Footer>
         </Container>
-      );
+      )
     }
   }
 
