@@ -36,7 +36,7 @@ export default class EmergencyPage extends Component {
     {
     return (
       <TouchableOpacity
-        onPress={ () => console.log('item >>>', item) }
+        onPress={() => {Actions.stepsPage()}}
         style={styles.container}
       >
         <Text style={{color: 'whitesmoke'}}>
@@ -48,7 +48,7 @@ export default class EmergencyPage extends Component {
   if ((item.id % 2)) {
    return (
      <TouchableOpacity
-       onPress={ () => console.log('item >>>', item) }
+       onPress={() => {Actions.stepsPage()}}
        style={styles.containerOdd}
      >
        <Text style={{color: 'firebrick'}}>
@@ -138,4 +138,6 @@ const styles = StyleSheet.create({
   text: {
     color: 'white'
   }
-});
+})
+
+// onPress={ () => console.log('item >>>', item) }
