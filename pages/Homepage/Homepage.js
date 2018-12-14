@@ -51,7 +51,7 @@ export default class Home extends Component {
           <Container>
             <HomepageQuotesList quotes={this.state.quotes} author={this.state.author}/>
             <Content>
-              <Button full large rounded primary><Text>Quiz</Text></Button>
+              <Button full large rounded primary onPress= {() => {Actions.questionsPage(); }}><Text>Quiz</Text></Button>
             </Content>
           </Container>
           <Footer>
