@@ -7,6 +7,7 @@ import { Container, Header, Content, Footer } from 'native-base'
 // Pages
 import Homepage from './pages/Homepage/Homepage'
 import EmergencyPage from './pages/EmergencyPage/EmergencyPage'
+import LoginPage from './pages/Loginpage/Loginpage'
 
 // Components
 import Navbar from './components/Navbar/Navbar'
@@ -26,6 +27,7 @@ export default class App extends Component {
         <Scene key="root">
           <Scene key="homePage" component={Homepage} title="Home" initial={true} />
           <Scene key="emergencies" component={EmergencyPage} title="Emergency" />
+          <Scene key="login" component={LoginPage} title="Login" />
         </Scene>
       </Router>
     )
