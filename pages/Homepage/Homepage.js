@@ -42,7 +42,7 @@ export default class Homepage extends Component {
         <Container>
           <Header>
             <Left>
-              <Button onPress= {() => {Actions.login(); }}>
+              <Button onPress= {() => {Actions.homePage(); }}>
                 <Text>Login</Text>
               </Button>
             </Left>
