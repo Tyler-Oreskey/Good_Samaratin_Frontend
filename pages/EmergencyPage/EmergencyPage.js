@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, Card, ListItem, Icon, StyleSheet, FlatList, TouchableOpacity, Dimensions } from 'react-native'
 import { Container, Header, Content, Footer, Left, Right, Body, Title, Button } from 'native-base'
 import { Actions } from 'react-native-router-flux';
-import EmergencyList from '../../components/EmergencyList/EmergencyList'
-import Emergency from '../../components/Emergency/Emergency'
+
 
 export default class EmergencyPage extends Component {
   constructor(props){
@@ -48,26 +47,37 @@ export default class EmergencyPage extends Component {
 
     render() {
       return (
-        <View>
-          <Header>
+        <Container>
+          <Header style={styles.header}>
             <Left>
-              <Button onPress= {() => {Actions.homePage(); }}>
-                <Text>Back</Text>
+              <Button
+                style={styles.button}
+                onPress={() => {Actions.homePage()}}>
+                <Text style={styles.text}>Back</Text>
               </Button>
             </Left>
             <Body>
-              <Title>Good Samaritan</Title>
+              <Image
+                style={styles.logo}
+                source={require('../../Logo/logo.png')}
+              />
             </Body>
-            <Right />
+            <Right>
+            </Right>
           </Header>
-          <FlatList
-            data={ this.state.emergencies }
-            keyExtractor={ (item, index) => index.toString() }
-            renderItem={ ({item}) => this.renderItem(item) }
-            horizontal={false}
-            numColumns={3}
-          />
-        </View>
+          <Content padding>
+            <FlatList
+              data={ this.state.emergencies }
+              keyExtractor={ (item, index) => index.toString() }
+              renderItem={ ({item}) => this.renderItem(item) }
+              horizontal={false}
+              numColumns={3}
+            />
+        </Content>
+        <Footer>
+
+        </Footer>
+        </Container>
       );
     }
   }
@@ -86,6 +96,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'firebrick'
-
+  },
+  header: {
+    marginTop: 20,
+    height: 120
+  },
+  logo: {
+    width: 70,
+    height: 80,
+  },
+  button: {
+    marginLeft: 10,
+    marginRight: 10,
+    width: 70,
+    justifyContent: 'center',
+  },
+  text: {
+    color: 'white'
   }
 });
