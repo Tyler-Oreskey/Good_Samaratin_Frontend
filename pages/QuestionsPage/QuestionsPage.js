@@ -18,7 +18,7 @@ export default class QuestionsPage extends Component {
             </Right>
           </Header>
           <Container>
-            <Button full large rounded primary onPress= {() => {Actions.resultsPage(); }}><Text>Quiz</Text></Button>
+            <Button full large rounded primary onPress= {() => {Actions.resultsPage(); }}><Text>Submit</Text></Button>
           </Container>
           <Footer>
           </Footer>

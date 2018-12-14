@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, Image, Card, ListItem, Button, Icon, StyleSheet } from 'react-native'
+import { View, Text, Image, Card, ListItem, Button, Icon, StyleSheet, FlatList } from 'react-native'
 import { Actions } from 'react-native-router-flux';
 import EmergencyList from '../../components/EmergencyList/EmergencyList'
+import Emergency from '../../components/Emergency/Emergency'
 
-class EmergencyPage extends Component {
+export default class EmergencyPage extends Component {
     constructor(props){
       super(props)
       this.state = {
@@ -28,16 +29,37 @@ class EmergencyPage extends Component {
         emergencies: json
       })
     }
+
+    renderItem = item => {
+      console.log("ITEM >>>>> ", item)
+      return (
+        <TouchableOpacity>
+          <Text>
+            {emergencies.map((emergency_name, index) => (
+              <Emergency key={ index } emergency_name={emergency_name} />
+            ))}
+            {console.log("fdsfds", emergencies.emergency_name)}
+          </Text>
+        </TouchableOpacity>
+      )
+    }
+
     render() {
+      console.log(this.state.emergencies)
+
       return (
         <View>
-          <EmergencyList emergencies={this.state.emergencies} />
+          <FlatList
+            data={ this.state.emergencies }
+            keyExtractor={ (item, index) => index.toString() }
+            renderItem={ ({item}) => this.renderItem(item) }
+            horizontal={false}
+            numColumns={3}
+          />
         </View>
       );
     }
   }
 
-const styles = StyleSheet.create({
-});
 
-export default EmergencyPage;
+          //<EmergencyList emergencies={this.state.emergencies} />
