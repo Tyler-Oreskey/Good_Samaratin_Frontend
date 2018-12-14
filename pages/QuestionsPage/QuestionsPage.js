@@ -13,6 +13,7 @@ export default class QuestionsPage extends Component {
             </Left>
             <Body>
               <Title>Quiz Goes Here</Title>
+              
             </Body>
             <Right>
             </Right>
