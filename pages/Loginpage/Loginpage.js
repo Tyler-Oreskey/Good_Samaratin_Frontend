@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 var buffer = require('buffer')
 import { Text, View, StyleSheet, Image, TextInput, TouchableHighlight, ActivityIndicator } from 'react-native';
 
-export default class Login extends Component {
+export default class Loginpage extends Component {
   constructor(props){
     super(props)
 
@@ -64,7 +64,7 @@ export default class Login extends Component {
   onLoginPressed(){
     this.setState({showProgress: true})
 
-    var authService = require('../AuthService/AuthService')
+    var authService = require('../../components/AuthService/AuthService')
 
     authService.login({
       username: this.state.username,

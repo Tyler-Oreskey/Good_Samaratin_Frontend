@@ -39,18 +39,14 @@ export default class Home extends Component {
         <Container>
           <Header>
             <Left>
-              <Button onPress={() => console.log('Hello')}>
+              <Button onPress= {() => {Actions.login(); }}>
                 <Text>Login</Text>
               </Button>
             </Left>
-                  <Body>
-                    <Title>Good Samaritan</Title>
-                  </Body>
-              <Right>
-                <Button onPress= {() => {Actions.emergencies(); }}>
-                  <Text>Back</Text>
-                </Button>
-              </Right>
+            <Body>
+              <Title>Good Samaritan</Title>
+            </Body>
+            <Right />
             </Header>
           <Container>
             <HomepageQuotesList quotes={this.state.quotes} author={this.state.author}/>
@@ -60,7 +56,7 @@ export default class Home extends Component {
           </Container>
           <Footer>
             <Content>
-              <Button full large danger><Text>Emergency</Text></Button>
+              <Button full large danger onPress= {() => {Actions.emergencies(); }}><Text>Emergency</Text></Button>
             </Content>
           </Footer>
         </Container>
