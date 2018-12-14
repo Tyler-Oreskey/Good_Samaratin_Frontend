@@ -13,7 +13,7 @@ export default class Homepage extends Component {
     super(props)
     this.state = {
       quotes: [],
-      loginStatus: false
+      loginStatus: false,
     }
   }
 
