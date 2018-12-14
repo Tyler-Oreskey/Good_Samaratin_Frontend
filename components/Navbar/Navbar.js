@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Platform, StyleSheet, Text, View, Image } from 'react-native';
 import NavigationBar from 'react-native-navbar';
 import { Button, Body, Header, Left, Right, Title } from 'native-base'
+import { Actions } from 'react-native-router-flux';
 
 
 export default class Navbar extends Component {
@@ -12,7 +13,7 @@ export default class Navbar extends Component {
           <Left>
             <Button
               style={styles.button}
-              onPress={() => console.log('Hello')}>
+              onPress={() => { Actions.login() }}>
               <Text style={styles.text}>Login</Text>
             </Button>
           </Left>

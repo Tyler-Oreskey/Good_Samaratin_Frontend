@@ -4,22 +4,17 @@ import { Actions } from 'react-native-router-flux'
 import { Container, Header, Content, Footer, Button, Left, Right, Body, Title } from 'native-base'
 
 
-import Navbar from '../../components//Navbar/Navbar'
-import HomepageQuotes from '../../components/HomepageQuotes/HomepageQuotes'
-
-
 export default class Homepage extends Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
-            quotes: [],
-            loginStatus: false,
+            quiz: [],
         }
     }
 
     // This is to grab quotes from the database
     async componentDidMount() {
-        const response = await fetch('https://safe-sands-98677.herokuapp.com/quotes', {
+        const response = await fetch('https://safe-sands-98677.herokuapp.com/quizzes', {
             method: 'GET',
             mode: "cors",
             cache: "no-cache",
@@ -38,20 +33,8 @@ export default class Homepage extends Component {
     }
 
     render() {
-        return (
+        return (            
             <Container>
-                <Header>
-                    <Left>
-                        <Button onPress={() => { Actions.login(); }}>
-                            <Text>Login</Text>
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title>Good Samaritan</Title>
-                    </Body>
-                    <Right />
-                </Header>
-                <Container>
                     <HomepageQuotes quotes={this.state.quotes} author={this.state.author} />
                     <Content>
                         <Button full large rounded primary onPress={() => { Actions.questionsPage(); }}><Text>Quiz</Text></Button>
