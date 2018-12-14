@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^8.0.0",
+    "browser-history": "^1.0.1",
     "buffer": "^5.2.1",
     "native-base": "^2.8.1",
     "navbar-native": "^1.6.1",
@@ -24,6 +25,7 @@
     "react-native-simple-card": "^1.0.1",
     "react-native-vector-icons": "^6.1.0",
     "react-navigation": "^3.0.8",
+    "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "reactstrap": "^6.5.0"
   },

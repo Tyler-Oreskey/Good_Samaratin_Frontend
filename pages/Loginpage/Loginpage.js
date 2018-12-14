@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 var buffer = require('buffer')
 import { Text, View, StyleSheet, Image, TextInput, TouchableHighlight, ActivityIndicator } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+import Homepage from '../Homepage/Homepage'
 
 export default class Loginpage extends Component {
   constructor(props){
     super(props)
 
     this.state = {
-      showProgress: false
+        showProgress: false,
+        user: ''
+      }
     }
-  }
 
   render() {
+    const { loginStatus } = this.props
 
     var errorCtrl = <View />
     if (!this.state.success && this.state.badCredentials) {
@@ -73,8 +77,9 @@ export default class Loginpage extends Component {
       this.setState(Object.assign({
         showProgress: false
       }, results))
-      if (results.success && this.props.onLogin) {
-        this.props.onLogin()
+      if (results.success) {
+        this.props = true
+        { Actions.homePage();}
       }
     })
   }

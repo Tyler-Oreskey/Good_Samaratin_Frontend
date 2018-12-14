@@ -7,11 +7,12 @@ import { Container, Header, Content, Footer, Button, Left, Right, Body, Title } 
 import Navbar from '../../components//Navbar/Navbar'
 import HomepageQuotesList from '../../components/HomepageQuotesList/HomepageQuotesList'
 
-export default class Home extends Component {
+export default class Homepage extends Component {
   constructor(props){
     super(props)
     this.state = {
-      quotes: []
+      quotes: [],
+      loginStatus: false
     }
   }
 
