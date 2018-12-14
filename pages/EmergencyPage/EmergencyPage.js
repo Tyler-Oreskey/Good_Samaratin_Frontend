@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, Card, ListItem, Button, Icon, StyleSheet, FlatList } from 'react-native'
+import { View, Text, Image, Card, ListItem, Button, Icon, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
 import { Actions } from 'react-native-router-flux';
 import EmergencyList from '../../components/EmergencyList/EmergencyList'
 import Emergency from '../../components/Emergency/Emergency'
@@ -33,12 +33,15 @@ export default class EmergencyPage extends Component {
     renderItem = item => {
       console.log("ITEM >>>>> ", item)
       return (
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={ () => console.log('item >>>', item) }
+
+        >
           <Text>
-            {emergencies.map((emergency_name, index) => (
-              <Emergency key={ index } emergency_name={emergency_name} />
-            ))}
-            {console.log("fdsfds", emergencies.emergency_name)}
+            { item.emergency_name }
+            {/* {item.emergency_name.map((emergency_name, index) => (
+              <Emergency key={ index } emergency_name={item.emergency_name} />
+            ))} */}
           </Text>
         </TouchableOpacity>
       )
