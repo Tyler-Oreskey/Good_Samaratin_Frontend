@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 var buffer = require('buffer')
-import { Text, View, StyleSheet, Image, TextInput, TouchableHighlight, ActivityIndicator } from 'react-native';
+import { Text, View, StyleSheet, Image, TextInput, TouchableHighlight, ActivityIndicator, Alert } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Homepage from '../Homepage/Homepage'
 
@@ -80,6 +80,12 @@ export default class Loginpage extends Component {
       if (results.success) {
         this.props = true
         { Actions.homePage();}
+        this.setState({
+          user: this.state.username
+        })
+          Alert.alert(
+            `Welcome ${this.state.username}`
+        )
       }
     })
   }
