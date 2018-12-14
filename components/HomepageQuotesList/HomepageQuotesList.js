@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, View, Text} from 'react-native';
-import HomepageQuotes from '../HomepageQuotes/HomepageQuotes'
+// import React, {Component} from 'react'
+// import { View } from 'react-native'
+// import HomepageQuotes from '../HomepageQuotes/HomepageQuotes'
 
-export default class HomepageQuotesList extends Component {
+// export default class HomepageQuotesList extends Component {
 
-  render() {
+//   render() {
 
-    const { quotes } = this.props
+//     const { quotes } = this.props
+//     // var randomQuote = json[Math.floor(Math.random() * json.length)]
+//     return (
+//       <View>
+//         {quotes.map((quotes, author, index) => ( <HomepageQuotes key={index}
+//           quotes={quotes}
+//           author={author}
+//         />))}
+//       </View>
+//     );
+//   }
 
-    return (
-      <View>
-        {quotes.map((quotes, author, index) => ( <HomepageQuotes key={index}
-          quotes={quotes}
-          author={author}
-        />))}
-      </View>
-    );
-  }
-
-}
+// }

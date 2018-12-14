@@ -5,7 +5,8 @@ import { Container, Header, Content, Footer, Button, Left, Right, Body, Title } 
 
 
 import Navbar from '../../components//Navbar/Navbar'
-import HomepageQuotesList from '../../components/HomepageQuotesList/HomepageQuotesList'
+import HomepageQuotes from '../../components/HomepageQuotes/HomepageQuotes'
+
 
 export default class Homepage extends Component {
   constructor(props){
@@ -29,9 +30,10 @@ export default class Homepage extends Component {
       }
     })
     const json = await response.json()
+    var randomQuote = json[Math.floor(Math.random() * json.length)]
     this.setState({
       ...this.state,
-      quotes: json
+      quotes: randomQuote
     })
   }
 
@@ -50,7 +52,7 @@ export default class Homepage extends Component {
             <Right />
             </Header>
           <Container>
-            <HomepageQuotesList quotes={this.state.quotes} author={this.state.author}/>
+            <HomepageQuotes quotes={this.state.quotes} author={this.state.author}/>
             <Content>
               <Button full large rounded primary onPress= {() => {Actions.questionsPage(); }}><Text>Quiz</Text></Button>
             </Content>

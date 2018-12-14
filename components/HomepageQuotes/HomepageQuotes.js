@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, View, Text} from 'react-native';
+import React, {Component} from 'react'
+import { View, Text } from 'react-native'
 
 export default class HomepageQuotes extends Component {
 
@@ -10,9 +10,9 @@ export default class HomepageQuotes extends Component {
     return (
       <View>
         <Text style={{fontSize: 20}}>"{quote}"</Text>
-        <Text style={{fontSize: 20}}>-{author}</Text>
+        <Text style={{ fontSize: 20, fontStyle: 'italic'}}>-{author}</Text>
       </View>
-    );
+    )
   }
 
 }
