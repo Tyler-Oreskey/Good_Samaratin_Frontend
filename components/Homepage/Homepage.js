@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Dimensions} from 'react-native';
-import { Container, Header, Content, Footer, Button, Left, Right } from 'native-base'
+import { Actions } from 'react-native-router-flux';
+import { Container, Header, Content, Footer, Button, Left, Right, Body, Title } from 'native-base'
+
+
 import Navbar from '../Navbar/Navbar'
 import HomepageQuotesList from '../HomepageQuotesList/HomepageQuotesList'
 
@@ -35,17 +38,29 @@ export default class Home extends Component {
       return (
         <Container>
           <Header>
-            <Navbar />
-          </Header>
+            <Left>
+              <Button onPress={() => console.log('Hello')}>
+                <Text>Login</Text>
+              </Button>
+            </Left>
+                  <Body>
+                    <Title>Good Samaritan</Title>
+                  </Body>
+              <Right>
+                <Button onPress= {() => {Actions.emergencies(); }}>
+                  <Text>Back</Text>
+                </Button>
+              </Right>
+            </Header>
           <Container>
             <HomepageQuotesList quotes={this.state.quotes} author={this.state.author}/>
+            <Content>
+              <Button full large rounded primary><Text>Quiz</Text></Button>
+            </Content>
           </Container>
           <Footer>
             <Content>
-              <Button full rounded primary><Text>Quiz</Text></Button>
-            </Content>
-            <Content>
-              <Button full rounded danger><Text>Emergency</Text></Button>
+              <Button full large danger><Text>Emergency</Text></Button>
             </Content>
           </Footer>
         </Container>
