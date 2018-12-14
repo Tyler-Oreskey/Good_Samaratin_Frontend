@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, Card, ListItem, Icon, StyleSheet, FlatList, TouchableOpacity, Dimensions } from 'react-native'
 import { Container, Header, Content, Footer, Left, Right, Body, Title, Button } from 'native-base'
 import { Actions } from 'react-native-router-flux';
-
+import CallForHelpButton from '../../components/CallForHelpButton/CallForHelpButton'
 
 export default class EmergencyPage extends Component {
   constructor(props){
@@ -32,18 +32,32 @@ export default class EmergencyPage extends Component {
   }
 
   renderItem = item => {
-    console.log("ITEM >>>>> ", item)
+    if((item.id % 2) === 0)
+    {
     return (
       <TouchableOpacity
         onPress={ () => console.log('item >>>', item) }
         style={styles.container}
       >
-        <Text>
+        <Text style={{color: 'whitesmoke'}}>
           { item.emergency_name }
         </Text>
       </TouchableOpacity>
     )
   }
+  if ((item.id % 2)) {
+   return (
+     <TouchableOpacity
+       onPress={ () => console.log('item >>>', item) }
+       style={styles.containerOdd}
+     >
+       <Text style={{color: 'firebrick'}}>
+         { item.emergency_name }
+       </Text>
+     </TouchableOpacity>
+   )
+  }
+}
 
     render() {
       return (
@@ -75,7 +89,7 @@ export default class EmergencyPage extends Component {
             />
         </Content>
         <Footer>
-
+          <CallForHelpButton />
         </Footer>
         </Container>
       );
@@ -96,6 +110,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'firebrick'
+  },
+  containerOdd: {
+    borderRadius: 4,
+    width: 124,
+    height: height * 0.15,
+    borderWidth: 2,
+    fontSize: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'whitesmoke',
+    color: 'white'
   },
   header: {
     marginTop: 20,
