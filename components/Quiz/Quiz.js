@@ -35,6 +35,7 @@ export default class Homepage extends Component {
     render() {
         return (            
             <Container>
+                <Container>
                     <HomepageQuotes quotes={this.state.quotes} author={this.state.author} />
                     <Content>
                         <Button full large rounded primary onPress={() => { Actions.questionsPage(); }}><Text>Quiz</Text></Button>

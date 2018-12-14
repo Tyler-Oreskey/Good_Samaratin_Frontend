@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, View, Dimensions} from 'react-native';
+import { Image, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { Container, Header, Content, Footer, Button, Left, Right, Body, Title } from 'native-base'
+import { Container, Header, Footer, Button, Left, Right, Body } from 'native-base'
 
 export default class QuestionsPage extends Component {
 
@@ -10,6 +10,12 @@ export default class QuestionsPage extends Component {
         <Container>
           <Header style={styles.header}>
             <Left>
+              <Button
+              style={styles.button} 
+              onPress={() => { Actions.homePage()
+              }}>
+                <Text style={styles.text}>Back</Text>
+              </Button>
             </Left>
             <Body>
               <Image
@@ -26,7 +32,7 @@ export default class QuestionsPage extends Component {
             </Right>
           </Header>
           <Container>
-            <Button full large rounded primary onPress= {() => {Actions.resultsPage(); }}><Text>Submit</Text></Button>
+            <Button full large rounded primary onPress={() => { Actions.resultsPage(); }}><Text style={styles.text}>Submit</Text></Button>
           </Container>
           <Footer>
           </Footer>

@@ -55,7 +55,7 @@ export default class Homepage extends Component {
           <Container>
             <HomepageQuotes quotes={this.state.quotes} author={this.state.author}/>
             <Content>
-              <Button full large rounded primary onPress= {() => {Actions.questionsPage(); }}><Text>Quiz</Text></Button>
+              <Button full large rounded primary onPress={() => { Actions.questionsPage(); }}><Text style={styles.text}>Quiz</Text></Button>
             </Content>
           </Container>
           <Footer>
@@ -70,9 +70,12 @@ export default class Homepage extends Component {
 
 const height = Dimensions.get('window').height
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  text: {
+    color: 'white'
   }
-});
+}
