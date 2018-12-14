@@ -40,9 +40,10 @@ export default class Homepage extends Component {
   render() {
       return (
         <Container>
-          <Header>
+          <Navbar />
+          {/* <Header>
             <Left>
-              <Button onPress= {() => {Actions.login(); }}>
+              <Button onPress= {() => {Actions.login()}}>
                 <Text>Login</Text>
               </Button>
             </Left>
@@ -50,7 +51,7 @@ export default class Homepage extends Component {
               <Title>Good Samaritan</Title>
             </Body>
             <Right />
-            </Header>
+            </Header> */}
           <Container>
             <HomepageQuotes quotes={this.state.quotes} author={this.state.author}/>
             <Content>
