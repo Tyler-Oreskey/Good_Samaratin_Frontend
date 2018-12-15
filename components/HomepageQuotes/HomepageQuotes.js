@@ -9,10 +9,24 @@ export default class HomepageQuotes extends Component {
 
     return (
       <View>
-        <Text style={{fontSize: 20}}>"{quote}"</Text>
-        <Text style={{ fontSize: 20, fontStyle: 'italic'}}>-{author}</Text>
+        <Text style={styles.quote}>"{quote}"</Text>
+        <Text style={styles.author}>-{author}</Text>
       </View>
     )
   }
-
+}
+const styles = {
+  quote: {
+    fontSize: 25,
+    marginTop: 10,
+    marginLeft: 15,
+    marginRight: 15
+  },
+  author: {
+    fontWeight: 'bold',
+    marginTop: 5,
+    fontStyle: 'italic',
+    fontSize: 20,
+    textAlign: 'center'
+  }
 }
