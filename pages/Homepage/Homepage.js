@@ -55,12 +55,12 @@ export default class Homepage extends Component {
           <Container>
             <HomepageQuotes quotes={this.state.quotes} author={this.state.author}/>
             <Content>
-              <Button full large rounded primary onPress={() => { Actions.questionsPage(); }}><Text style={styles.text}>Quiz</Text></Button>
+              <Button style={styles.button} full large rounded primary onPress={() => { Actions.questionsPage(); }}><Text style={styles.text}>Quiz</Text></Button>
             </Content>
           </Container>
           <Footer>
             <Content>
-              <Button full large danger onPress= {() => {Actions.emergencies(); }}><Text>Emergency</Text></Button>
+              <Button full large danger onPress= {() => {Actions.emergencies(); }}><Text style={styles.text}>Emergency</Text></Button>
             </Content>
           </Footer>
         </Container>
@@ -76,6 +76,13 @@ const styles = {
     alignItems: 'center'
   },
   text: {
-    color: 'white'
+    color: 'white',
+    fontSize: 20,
+    justifyContent: 'center'
+  },
+  button: {
+    marginTop: 25,
+    marginLeft: 15,
+    marginRight: 15
   }
 }
