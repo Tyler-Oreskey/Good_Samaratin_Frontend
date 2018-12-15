@@ -41,17 +41,6 @@ export default class Homepage extends Component {
       return (
         <Container>
           <Navbar />
-          {/* <Header>
-            <Left>
-              <Button onPress= {() => {Actions.login()}}>
-                <Text>Login</Text>
-              </Button>
-            </Left>
-            <Body>
-              <Title>Good Samaritan</Title>
-            </Body>
-            <Right />
-            </Header> */}
           <Container>
             <HomepageQuotes quotes={this.state.quotes} author={this.state.author}/>
             <Content>
@@ -64,7 +53,7 @@ export default class Homepage extends Component {
             </Content>
           </Footer>
         </Container>
-      );
+      )
     }
   }
 
