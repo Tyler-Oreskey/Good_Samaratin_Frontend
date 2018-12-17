@@ -32,8 +32,7 @@ export default class EmergencyPage extends Component {
   }
 
   renderItem = item => {
-    if((item.id % 2) === 0)
-    {
+    if((item.id % 2) === 0) {
     return (
       <TouchableOpacity
         onPress={
@@ -45,33 +44,33 @@ export default class EmergencyPage extends Component {
             Actions.stepsPage()
           }
         }
-        style={styles.container}
-      >
-        <Text style={{color: 'whitesmoke'}}>
-          { item.emergency_name }
-        </Text>
-      </TouchableOpacity>
-    )
-  }
-  if ((item.id % 2)) {
-   return (
-     <TouchableOpacity
-      onPress={
-        async () => {
-          try {
-            await AsyncStorage.setItem('emergency', item.emergency_name)
-          } catch (error)
-          { console.log('Error retrieving data')}
-          Actions.stepsPage()
-        }
-       }
-      style={styles.containerOdd}
-     >
-       <Text style={{color: 'firebrick'}}>
-         { item.emergency_name }
-       </Text>
-     </TouchableOpacity>
-   )
+          style={styles.container}
+        >
+          <Text style={{color: 'whitesmoke'}}>
+            { item.emergency_name }
+          </Text>
+        </TouchableOpacity>
+      )
+    }
+    if ((item.id % 2)) {
+     return (
+       <TouchableOpacity
+         onPress={
+           async () => {
+             try {
+               await AsyncStorage.setItem('emergency', item.emergency_name)
+             } catch (error)
+             { console.log('Error retrieving data')}
+             Actions.stepsPage()
+           }
+         }
+        style={styles.containerOdd}
+       >
+         <Text style={{color: 'firebrick'}}>
+           { item.emergency_name }
+         </Text>
+       </TouchableOpacity>
+     )
   }
 }
 

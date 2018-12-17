@@ -76,6 +76,12 @@ export default class StepsPage extends Component {
         console.log("Error, no item in renderItem")
       )
     }
+
+    //console.log("Emergencies >>> ", this.state.emergencies)
+    //console.log("Emergencies_Steps >>> ", this.state.emergencies_steps)
+    //console.log("Steps >>> ", this.state.steps)
+    console.log("fakjjlfkas", this.state.currentEmergency)
+
     return (
       <Card>
         <CardItem>
@@ -84,7 +90,7 @@ export default class StepsPage extends Component {
           </Body>
         </CardItem>
         <CardItem>
-            <Text>{item.step}</Text>
+          <Text>{item.step}</Text>
         </CardItem>
       </Card>
     )
@@ -92,11 +98,11 @@ export default class StepsPage extends Component {
 
   render() {
 
-    const filterEmergency = this.state.currentEmergency._55
-    const emergencyObject = this.state.emergencies.filter((emergency) => emergency.emergency_name === filterEmergency)
+    //const filterEmergency = this.state.currentEmergency
+    //const emergencyObject = this.state.emergencies.filter((emergency) => emergency.emergency_name === filterEmergency)
 
-    const listSteps = this.state.steps.map((step) => step.key)
-    console.log("fdasfsd >>>> ", this.state.steps)
+    //console.log('filter>>> ', filterEmergency)
+    //console.log('emegerncyObjec>>> ', emergencyObject)
 
     return (
       <Container>
