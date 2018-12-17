@@ -10,6 +10,7 @@ export default class QuestionsPage extends Component {
     super(props) 
     this.state = {
       quiz: [],
+      selectedQuestions: new Set(),
     }
   }
 
@@ -28,67 +29,8 @@ export default class QuestionsPage extends Component {
     console.log('App: loadMessages(): response', response)
     if (response.status === 200) {
       const resJSON = await response.json()
-      const quizData =
-        {
-          'id': 1,
-        'quizTitle': 'Good Samaritan General Quiz',
-        'questions': [
-          {
-            'id': '1',
-            'question': 'You find a person who is unresponsive and not breathing, what is the first thing you should do?',
-            'questionType': 'text',
-            'questionCategory': 'basic_quiz',
-            'answers': [
-              'Check for a pulse.',
-              'Start CPR.',
-              'Call 911.',
-              'Check for ID.'
-            ],
-            'correctAnswer': '3'
-          },
-          {
-            'id': '2',
-            'question': 'Your best friend is chowing down on a bratwurst, when he/she grabs his neck and starts hacking, you know they’re is choking, what is the first thing you should do?',
-            'questionType': 'text',
-            'questionCategory': 'basic_quiz',
-            'answers': [
-              'Try to pull the bratwurst out of their throat.',
-              'Perform the Heimlich maneuver.',
-              'Try to burp him/her.',
-              'Give him/her some water.'
-            ],
-            'correctAnswer': '2'
-          },
-          {
-            'id': '3',
-            'question': 'What is the first thing you should do when attempting to help someone else.',
-            'questionType': 'text',
-            'questionCategory': 'basic_quiz',
-            'answers': [
-              'Assess the scene for potential hazards to you. You cannot help someone if you also become a patient/casualty.',
-              'Run to the patient.',
-              'Give the patient a sternum rub to check their responsiveness, even if he/she is making noise.',
-              'Take a photo to send to your friends.'
-            ],
-            'correctAnswer': '1'
-          },
-          {
-            'id': '4',
-            'question': 'When should you help a patient.',
-            'questionType': 'text',
-            'questionCategory': 'basic_quiz',
-            'answers': [
-              'Call 911',
-              'Never',
-              'When you are the most qualified person there and you are willing to help.',
-            ],
-            'correctAnswer': '3'
-          },
-        ]
-      }
-
       console.log('loaded: ', resJSON)
-      console.log('quizData', quizData)
+      
       this.setState({
         quiz: resJSON,
       })
@@ -103,8 +45,26 @@ export default class QuestionsPage extends Component {
     this.loadQuizzes()
   }
 
+
+  toggleSelected = (id) => {
+    this.setState((state) => {
+
+      // toggle the selection
+      const { selectedQuestions } = state
+      if (selectedQuestions.has(id)) selectedQuestions.delete(id)
+      else selectedQuestions.add(id)
+
+      // update state
+
+      return {
+        selectedQuestions,
+      }
+    })
+  }
+
+
   render() {
-    const { quiz } = this.state
+    const { quiz, selectedQuestions } = this.state
     // console.log('QuestionsPage: quiz', quiz)
       return (
         <Container>
@@ -131,7 +91,11 @@ export default class QuestionsPage extends Component {
               </Button>
             </Right>
           </Header>
-            <Quiz quiz={quiz} />
+          <Quiz 
+            quiz={quiz} 
+            toggleSelected={this.toggleSelected}
+            selectedQuestions={selectedQuestions}
+          />
           <Footer>
             <Content>
               <Button full large danger onPress={() => { Actions.homePage() }}><Text>Home Page</Text></Button>

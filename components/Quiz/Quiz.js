@@ -7,7 +7,7 @@ import Question from './Question'
 export default class Quiz extends Component {
 
     render() {
-        let { quiz } = this.props
+        let { quiz, toggleSelected, selectedQuestions } = this.props
         let { questions } = quiz
         console.log('Quiz.js: quiz', this.props.quiz)
         console.log('Quiz.js: questions', questions)
@@ -26,7 +26,11 @@ export default class Quiz extends Component {
             <Container>
                 <Content>
                     <Text style={styles.header}>{quiz.quizTitle}</Text>
-                    <Question quiz={quiz} />
+                    <Question 
+                        quiz={quiz} 
+                        toggleSelected={toggleSelected}
+                        selected={selectedQuestions.has(quiz.id)} 
+                    />
                 </Content>
                     <Button style={styles.submitButton} full large rounded primary onPress={() => { Actions.resultsPage() }}><Text style={styles.text}>Submit {quiz.length} Questions</Text></Button>
             </Container>

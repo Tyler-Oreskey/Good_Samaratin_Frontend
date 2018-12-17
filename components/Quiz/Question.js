@@ -1,24 +1,31 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text } from 'react-native'
-import { Container } from 'native-base'
+import { Container, CheckBox, Text, Body, ListItem } from 'native-base'
+
 
 
 class Question extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         incorrectAnswer: false,
-    //         correctAnswer: false,
-    //         showNextQuestionButton: false,
-    //         endQuiz: false,
-    //         currentQuestionIndex: 0,
-    //         buttons: {},
-    //         buttonClasses: {},
-    //         correct: [],
-    //         incorrect: [],
-    //     };
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            incorrectAnswer: false,
+            correctAnswer: false,
+            showNextQuestionButton: false,
+            endQuiz: false,
+            currentQuestionIndex: 0,
+            buttons: {},
+            buttonClasses: {},
+            correct: [],
+            incorrect: [],
+            checked: false,
+        }
+    }
+
+    onCheckboxSelect = () => {
+        const { toggleSelected, message } = this.props
+        const { id } = message
+        toggleSelected(id)
+    }
 
     // checkAnswer = (index, correctAnswer) => {
     //     const { correct, incorrect, currentQuestionIndex } = this.state
@@ -103,36 +110,39 @@ class Question extends Component {
     // }
 
     render() {
-        const { quiz } = this.props
+        const { quiz, selected } = this.props
         const { question } = quiz
         console.log('Question.js: quiz', quiz)
         console.log('Question.js: question', question)
-        // let question = questions[this.state.currentQuestionIndex]
+
         return (
-            <Container>
+            <Body>
                 {quiz.map(question => 
-                    <Container key={question.id}>
+                    <Body key={question.id}>
                         <Text key={question.id} question={question.question} style={styles.questions}> {question.question}</Text>
-                        <Text>{question.correct_answer}</Text>
-                        <Text>{question.wrong_answer_one}</Text>
-                        <Text>{question.wrong_answer_two}</Text>
-                        <Text>{question.wrong_answer_three}</Text>
-                        {/* <Container key={question.answers.id} answers={question.answers}>
-                            {question.answers.map(answer =>
-                                <Text key={answer} answer={answer} style={styles.answers}>{answer}</Text>
-                            )}
-                        </Container> */}
-                    </Container>
+                        <ListItem onPress={() => this.setState({ checked: !this.state.checked })}>
+                            <CheckBox style={styles.checkBox} checked={this.state.checked} onChange={this.onCheckboxSelect} />
+                            <Text style={styles.answers}>{question.correct_answer}</Text>
+                        </ListItem>
+                        <ListItem onPress={() => this.setState({ checked: !this.state.checked })}>
+                            <CheckBox style={styles.checkBox} checked={this.state.checked} />
+                            <Text style={styles.answers}>{question.wrong_answer_one}</Text>
+                        </ListItem>
+                        <ListItem onPress={() => this.setState({ checked: !this.state.checked })}>
+                            <CheckBox style={styles.checkBox} checked={this.state.checked} />
+                            <Text style={styles.answers}>{question.wrong_answer_two}</Text>
+                        </ListItem>
+                        <ListItem onPress={() => this.setState({ checked: !this.state.checked })}>
+                            <CheckBox style={styles.checkBox} checked={this.state.checked} />
+                            <Text style={styles.answers}>{question.wrong_answer_three}</Text>
+                        </ListItem>
+                    </Body>
                 )}
-            </Container>
+            </Body>
         )
     }
 }
 
-
-// Question.propTypes = {
-//     questions: PropTypes.array,
-// }
 
 export default Question
 
@@ -148,4 +158,7 @@ const styles = {
         fontSize: 14,
         marginTop: 10,
     },
+    checkBox: {
+        marginRight: 20,
+    }
 }
