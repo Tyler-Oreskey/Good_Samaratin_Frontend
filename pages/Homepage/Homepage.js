@@ -6,14 +6,14 @@ import { Container, Header, Content, Footer, Button, Left, Right, Body, Title } 
 
 import Navbar from '../../components//Navbar/Navbar'
 import HomepageQuotes from '../../components/HomepageQuotes/HomepageQuotes'
+import Loginpage from '../Loginpage/Loginpage'
 
 
 export default class Homepage extends Component {
-  constructor(props){
-    super(props)
+  constructor(){
+    super()
     this.state = {
       quotes: [],
-      loginStatus: false,
     }
   }
 
@@ -36,6 +36,7 @@ export default class Homepage extends Component {
       quotes: randomQuote
     })
   }
+
 
   render() {
       return (
