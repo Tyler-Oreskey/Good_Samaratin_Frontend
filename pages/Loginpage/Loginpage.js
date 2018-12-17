@@ -5,18 +5,19 @@ import { Actions } from 'react-native-router-flux';
 import Homepage from '../Homepage/Homepage'
 
 export default class Loginpage extends Component {
-  constructor(props){
-    super(props)
-
-    this.state = {
+    constructor(props){
+      super(props)
+      this.state = {
         showProgress: false,
         user: ''
       }
     }
 
   render() {
-    const { loginStatus } = this.props
 
+    const {loginStatus, handleLoginStatus} = this.props
+
+    console.log('before login success', this.props.loginStatus);
     var errorCtrl = <View />
     if (!this.state.success && this.state.badCredentials) {
       errorCtrl = <Text style={styles.error}>
@@ -47,7 +48,7 @@ export default class Loginpage extends Component {
             secureTextEntry={ true } />
 
           <TouchableHighlight
-            onPress={this.onLoginPressed.bind(this)}
+            onPress={this.onLoginPressed}
             style={styles.button}>
             <Text style={styles.buttonText}>
               Log in
@@ -65,27 +66,38 @@ export default class Loginpage extends Component {
     );
   }
 
-  onLoginPressed(){
+  onLoginPressed = () => {
+    var username = 'Tyler-Oreskey'
+    var password = 'Laxmaster40'
+
     this.setState({showProgress: true})
 
     var authService = require('../../components/AuthService/AuthService')
 
     authService.login({
-      username: this.state.username,
-      password: this.state.password
+
+      username: username,
+      password: password
+      // username: this.state.username,
+      // password: this.state.password
     },(results) => {
       this.setState(Object.assign({
         showProgress: false
       }, results))
+
       if (results.success) {
-        this.props = true
-        { Actions.homePage();}
+
         this.setState({
           user: this.state.username
         })
-          Alert.alert(
-            `Welcome ${this.state.username}`
+
+        { Actions.homePage();}
+
+        Alert.alert(
+          ` Welcome ${this.state.username}`
         )
+
+        this.props.handleLoginStatusCB()
       }
     })
   }

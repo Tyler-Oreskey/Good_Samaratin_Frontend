@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
@@ -16,16 +15,25 @@ export default class App extends Component {
 
   constructor(props){
     super(props)
-    this.state = {}
+    this.state = {
+      loginStatus: false,
+    }
   }
+  //set user login status to true
+  handleLoginStatus = () => {
+     this.setState({
+       loginStatus: true
+     });
+   }
 
   render() {
+    console.log('login status app.js', this.state.loginStatus);
     return (
       <Router>
         <Scene key="root" hideNavBar= "false">
           <Scene key="homePage" component={Homepage} title="Home" initial={true} />
           <Scene key="emergencies" component={EmergencyPage} title="Emergency" />
-          <Scene key="login" component={LoginPage} title="Login" />
+          <Scene key="login" handleLoginStatusCB={this.handleLoginStatus} component={LoginPage} loginStatus={this.state.loginStatus} title="Login" />
           <Scene key="questionsPage" component={QuestionsPage} title="Quiz" />
           <Scene key="resultsPage" component={ResultsPage} title="Results" />
           <Scene key="stepsPage" component={StepsPage} title="Steps" />
