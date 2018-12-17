@@ -18,7 +18,7 @@ export default class Homepage extends Component {
   }
 
   // This is to grab quotes from the database
-  async componentDidMount() {
+  async loadQuotes() {
     const response = await fetch('https://safe-sands-98677.herokuapp.com/quotes', {
       method: 'GET',
       mode: "cors",
@@ -35,6 +35,10 @@ export default class Homepage extends Component {
       ...this.state,
       quotes: randomQuote
     })
+  }
+
+  async componentDidMount() {
+    this.loadQuotes()
   }
 
   render() {

@@ -300,21 +300,21 @@
 			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
 			remoteInfo = "jschelpers-tvOS";
 		};
-		4DD779D421C813A20075002A /* PBXContainerItemProxy */ = {
+		4DD7799521C805920075002A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2FAC3DA6D6C94B8484008D4A /* RNGestureHandler.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNGestureHandler;
 		};
-		4DD779D821C813A20075002A /* PBXContainerItemProxy */ = {
+		4DD7799921C805920075002A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2BAB38E16ABB45F8B2A68287 /* RNVectorIcons.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
 			remoteInfo = RNVectorIcons;
 		};
-		4DD779DA21C813A20075002A /* PBXContainerItemProxy */ = {
+		4DD7799B21C805920075002A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2BAB38E16ABB45F8B2A68287 /* RNVectorIcons.xcodeproj */;
 			proxyType = 2;
@@ -591,7 +591,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4DD779A921C813A10075002A /* Recovered References */ = {
+		4DD7796A21C8058F0075002A /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				721DEF983ECE4E08ABF78516 /* libRNGestureHandler.a */,
@@ -601,19 +601,19 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		4DD779CF21C813A20075002A /* Products */ = {
+		4DD7799021C805910075002A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DD779D521C813A20075002A /* libRNGestureHandler.a */,
+				4DD7799621C805920075002A /* libRNGestureHandler.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4DD779D121C813A20075002A /* Products */ = {
+		4DD7799221C805910075002A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DD779D921C813A20075002A /* libRNVectorIcons.a */,
-				4DD779DB21C813A20075002A /* libRNVectorIcons-tvOS.a */,
+				4DD7799A21C805920075002A /* libRNVectorIcons.a */,
+				4DD7799C21C805920075002A /* libRNVectorIcons-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -675,7 +675,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				8F769B0C195C45C79669C8F6 /* Resources */,
-				4DD779A921C813A10075002A /* Recovered References */,
+				4DD7796A21C8058F0075002A /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -887,11 +887,11 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 4DD779CF21C813A20075002A /* Products */;
+					ProductGroup = 4DD7799021C805910075002A /* Products */;
 					ProjectRef = 2FAC3DA6D6C94B8484008D4A /* RNGestureHandler.xcodeproj */;
 				},
 				{
-					ProductGroup = 4DD779D121C813A20075002A /* Products */;
+					ProductGroup = 4DD7799221C805910075002A /* Products */;
 					ProjectRef = 2BAB38E16ABB45F8B2A68287 /* RNVectorIcons.xcodeproj */;
 				},
 			);
@@ -1130,25 +1130,25 @@
 			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4DD779D521C813A20075002A /* libRNGestureHandler.a */ = {
+		4DD7799621C805920075002A /* libRNGestureHandler.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNGestureHandler.a;
-			remoteRef = 4DD779D421C813A20075002A /* PBXContainerItemProxy */;
+			remoteRef = 4DD7799521C805920075002A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4DD779D921C813A20075002A /* libRNVectorIcons.a */ = {
+		4DD7799A21C805920075002A /* libRNVectorIcons.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNVectorIcons.a;
-			remoteRef = 4DD779D821C813A20075002A /* PBXContainerItemProxy */;
+			remoteRef = 4DD7799921C805920075002A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4DD779DB21C813A20075002A /* libRNVectorIcons-tvOS.a */ = {
+		4DD7799C21C805920075002A /* libRNVectorIcons-tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libRNVectorIcons-tvOS.a";
-			remoteRef = 4DD779DA21C813A20075002A /* PBXContainerItemProxy */;
+			remoteRef = 4DD7799B21C805920075002A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
