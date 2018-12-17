@@ -31,7 +31,7 @@ export default class App extends Component {
     return (
       <Router>
         <Scene key="root" hideNavBar= "false">
-          <Scene key="homePage" component={Homepage} title="Home" initial={true} />
+          <Scene key="homePage" component={Homepage} loginStatus={this.state.loginStatus} title="Home" initial={true} />
           <Scene key="emergencies" component={EmergencyPage} title="Emergency" />
           <Scene key="login" handleLoginStatusCB={this.handleLoginStatus} component={LoginPage} loginStatus={this.state.loginStatus} title="Login" />
           <Scene key="questionsPage" component={QuestionsPage} title="Quiz" />
