@@ -42,13 +42,16 @@ export default class Homepage extends Component {
   }
 
   render() {
+
+    const { loginStatus } = this.props
+
       return (
         <Container>
           <Navbar />
           <Container>
             <HomepageQuotes quotes={this.state.quotes} author={this.state.author}/>
             <Content>
-              <Button style={styles.button} full large rounded primary onPress={() => { Actions.questionsPage(); }}><Text style={styles.text}>Quiz</Text></Button>
+              <Button disabled={loginStatus === false} style={styles.button} full large rounded primary onPress={() => { Actions.questionsPage(); }}><Text style={styles.text}>Quiz</Text></Button>
             </Content>
           </Container>
           <Footer>
