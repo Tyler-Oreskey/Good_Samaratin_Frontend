@@ -104,20 +104,24 @@ class Question extends Component {
 
     render() {
         const { quiz } = this.props
-        const { questions } = quiz
+        const { question } = quiz
         console.log('Question.js: quiz', quiz)
-        console.log('Question.js: question', questions)
+        console.log('Question.js: question', question)
         // let question = questions[this.state.currentQuestionIndex]
         return (
             <Container>
-                {questions.map(question => 
+                {quiz.map(question => 
                     <Container key={question.id}>
                         <Text key={question.id} question={question.question} style={styles.questions}> {question.question}</Text>
-                        <Container key={question.answers.id} answers={question.answers}>
+                        <Text>{question.correct_answer}</Text>
+                        <Text>{question.wrong_answer_one}</Text>
+                        <Text>{question.wrong_answer_two}</Text>
+                        <Text>{question.wrong_answer_three}</Text>
+                        {/* <Container key={question.answers.id} answers={question.answers}>
                             {question.answers.map(answer =>
                                 <Text key={answer} answer={answer} style={styles.answers}>{answer}</Text>
                             )}
-                        </Container>
+                        </Container> */}
                     </Container>
                 )}
             </Container>

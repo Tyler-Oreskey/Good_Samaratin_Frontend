@@ -13,7 +13,7 @@ export default class Quiz extends Component {
         console.log('Quiz.js: questions', questions)
 
 
-        if (!questions) {
+        if (!this.props.quiz[0]) {
             return (
                 <Container>
                     <Text>Loading Quiz...</Text>
@@ -28,7 +28,7 @@ export default class Quiz extends Component {
                     <Text style={styles.header}>{quiz.quizTitle}</Text>
                     <Question quiz={quiz} />
                 </Content>
-                    <Button style={styles.submitButton} full large rounded primary onPress={() => { Actions.resultsPage() }}><Text style={styles.text}>Submit {questions.length} Questions</Text></Button>
+                    <Button style={styles.submitButton} full large rounded primary onPress={() => { Actions.resultsPage() }}><Text style={styles.text}>Submit {quiz.length} Questions</Text></Button>
             </Container>
         </Container> 
         )

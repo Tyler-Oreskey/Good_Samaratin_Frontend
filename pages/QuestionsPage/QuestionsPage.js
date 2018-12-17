@@ -28,7 +28,9 @@ export default class QuestionsPage extends Component {
     console.log('App: loadMessages(): response', response)
     if (response.status === 200) {
       const resJSON = await response.json()
-      const quizData = {
+      const quizData =
+        {
+          'id': 1,
         'quizTitle': 'Good Samaritan General Quiz',
         'questions': [
           {
@@ -88,7 +90,7 @@ export default class QuestionsPage extends Component {
       console.log('loaded: ', resJSON)
       console.log('quizData', quizData)
       this.setState({
-        quiz: quizData,
+        quiz: resJSON,
       })
     } else {
       console.log('Error:', response)
