@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, Card, ListItem, Icon, StyleSheet, FlatList, TouchableOpacity, Dimensions } from 'react-native'
+import { View, Text, Image, Card, ListItem, Icon, StyleSheet, FlatList, TouchableOpacity, Dimensions, AsyncStorage } from 'react-native'
 import { Container, Header, Content, Footer, Left, Right, Body, Title, Button } from 'native-base'
 import { Actions } from 'react-native-router-flux';
 import CallForHelpButton from '../../components/CallForHelpButton/CallForHelpButton'
@@ -36,7 +36,15 @@ export default class EmergencyPage extends Component {
     {
     return (
       <TouchableOpacity
-        onPress={() => {Actions.stepsPage()}}
+        onPress={
+          async () => {
+            try {
+              await AsyncStorage.setItem('emergency', item.emergency_name)
+            } catch (error)
+            { console.log('Error retrieving data')}
+            Actions.stepsPage()
+          }
+        }
         style={styles.container}
       >
         <Text style={{color: 'whitesmoke'}}>
@@ -48,8 +56,16 @@ export default class EmergencyPage extends Component {
   if ((item.id % 2)) {
    return (
      <TouchableOpacity
-       onPress={() => {Actions.stepsPage()}}
-       style={styles.containerOdd}
+      onPress={
+        async () => {
+          try {
+            await AsyncStorage.setItem('emergency', item.emergency_name)
+          } catch (error)
+          { console.log('Error retrieving data')}
+          Actions.stepsPage()
+        }
+       }
+      style={styles.containerOdd}
      >
        <Text style={{color: 'firebrick'}}>
          { item.emergency_name }
@@ -77,6 +93,11 @@ export default class EmergencyPage extends Component {
               />
             </Body>
             <Right>
+              <Button
+                style={styles.button}
+                onPress={() => {Actions.stepsPage()}}>
+                <Text style={styles.text}>Steps</Text>
+              </Button>
             </Right>
           </Header>
           <Content padding>
