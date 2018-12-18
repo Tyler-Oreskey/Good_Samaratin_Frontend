@@ -69,19 +69,14 @@ export default class Loginpage extends Component {
   }
 
   onLoginPressed = () => {
-    var username = 'Tyler-Oreskey'
-    var password = 'Laxmaster40'
 
     this.setState({showProgress: true})
 
     var authService = require('../../components/AuthService/AuthService')
 
     authService.login({
-
-      username: username,
-      password: password
-      // username: this.state.username,
-      // password: this.state.password
+      username: this.state.username,
+      password: this.state.password
     },(results) => {
       this.setState(Object.assign({
         showProgress: false
