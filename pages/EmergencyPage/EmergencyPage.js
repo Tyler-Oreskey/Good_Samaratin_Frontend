@@ -31,19 +31,17 @@ export default class EmergencyPage extends Component {
     })
   }
 
+  async onPressHandler(item){
+    await AsyncStorage.setItem('emergency', item.emergency_name)
+    //console.log("item >>>", item.emergency_name)
+    Actions.stepsPage()
+  }
+
   renderItem = item => {
     if((item.id % 2) === 0) {
-    return (
-      <TouchableOpacity
-        onPress={
-          async () => {
-            try {
-              await AsyncStorage.setItem('emergency', item.emergency_name)
-            } catch (error)
-            { console.log('Error retrieving data')}
-            Actions.stepsPage()
-          }
-        }
+      return (
+        <TouchableOpacity
+          onPress={()=>this.onPressHandler(item)}
           style={styles.container}
         >
           <Text style={{color: 'whitesmoke'}}>
@@ -55,15 +53,7 @@ export default class EmergencyPage extends Component {
     if ((item.id % 2)) {
      return (
        <TouchableOpacity
-         onPress={
-           async () => {
-             try {
-               await AsyncStorage.setItem('emergency', item.emergency_name)
-             } catch (error)
-             { console.log('Error retrieving data')}
-             Actions.stepsPage()
-           }
-         }
+        onPress={()=>this.onPressHandler(item)}
         style={styles.containerOdd}
        >
          <Text style={{color: 'firebrick'}}>
