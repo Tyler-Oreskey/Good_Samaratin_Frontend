@@ -72,13 +72,30 @@ export default class StepsPage extends Component {
      //console.log("Get Current Emergency in getCM >>> ", this.state.currentEmergency)
   }
 
+  // async getCurrentSteps() {
+  //   const response = await fetch('https://safe-sands-98677.herokuapp.com/steps', {
+  //     method: 'GET',
+  //     mode: "cors",
+  //     cache: "no-cache",
+  //     credentials: "same-origin",
+  //     headers: {
+  //       'Accept': 'application/JSON',
+  //       'Content-Type': 'application/json'
+  //     }
+  //   })
+  //   const json = await response.json()
+  //   this.setState({
+  //     ...this.state,
+  //     emergencies: json
+  //   })
+  // }
+
   async componentDidMount() {
     this.getCurrentEmergency()
+    //this.getCurrentSteps()
   }
 
   renderItem = item => {
-
-    console.log("renderitem >>>> ", this.state.currentEmergency)
 
     if(!item) {
       return (
