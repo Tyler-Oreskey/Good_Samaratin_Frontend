@@ -75,13 +75,14 @@ export default class EmergencyPage extends Component {
 }
 
     render() {
+      const { loginStatus } = this.props
       return (
         <Container>
           <Header style={styles.header}>
             <Left>
               <Button
                 style={styles.button}
-                onPress={() => {Actions.homePage()}}>
+                onPress={() => {Actions.homePage(this.props.loginStatus)}}>
                 <Text style={styles.text}>Back</Text>
               </Button>
             </Left>
