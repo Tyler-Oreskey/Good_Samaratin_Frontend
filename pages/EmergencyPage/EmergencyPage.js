@@ -83,11 +83,6 @@ export default class EmergencyPage extends Component {
               />
             </Body>
             <Right>
-              <Button
-                style={styles.button}
-                onPress={() => {Actions.stepsPage()}}>
-                <Text style={styles.text}>Steps</Text>
-              </Button>
             </Right>
           </Header>
           <Content padding>
