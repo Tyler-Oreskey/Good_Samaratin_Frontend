@@ -4,10 +4,20 @@ import { Actions } from 'react-native-router-flux';
 import { Container, Header, Footer, Button, Left, Right, Body, Content } from 'native-base'
 import Quiz from '../../components/Quiz/Quiz'
 
+import store from '../../Store';
+
 export default class QuestionsPage extends Component {
 
+  functionCombined = () => {
+      // console.log("Navbar::functionCombined(), this.props.handleLogoutStatusCB:", this.props.handleLogoutStatusCB);
+      // this.props.handleLogoutStatusCB();
+      console.log("Navbar::functionCombined(), store.getState().handleLogoutStatus:", store.getState().handleLogoutStatus);
+      store.getState().handleLogoutStatus();
+      { Actions.homePage(); }
+  }
+
   constructor(props) {
-    super(props) 
+    super(props)
     this.state = {
       quiz: [],
       selectedAnswers: new Set(),
@@ -30,7 +40,7 @@ export default class QuestionsPage extends Component {
     if (response.status === 200) {
       const resJSON = await response.json()
       console.log('loaded: ', resJSON)
-      
+
       this.setState({
         quiz: resJSON,
       })
@@ -79,7 +89,7 @@ export default class QuestionsPage extends Component {
           <Header style={styles.header}>
             <Left>
               <Button
-              style={styles.button} 
+              style={styles.button}
               onPress={() => { Actions.homePage()
               }}>
                 <Text style={styles.text}>Back</Text>
@@ -94,14 +104,14 @@ export default class QuestionsPage extends Component {
             <Right>
               <Button
                 style={styles.button}
-                onPress={() => console.log('GoodBye')}>
+                onPress={this.functionCombined}>
                 <Text style={styles.text}>Logout</Text>
               </Button>
             </Right>
           </Header>
-          <Quiz 
+          <Quiz
             quiz={quiz}
-            correctAnswers={this.correctAnswers} 
+            correctAnswers={this.correctAnswers}
             wrongAnswers={this.wrongAnswers}
             toggleSelected={this.toggleSelected}
             selectedAnswers={selectedAnswers}
@@ -111,7 +121,7 @@ export default class QuestionsPage extends Component {
               <Button full large danger onPress={() => { Actions.homePage() }}><Text>Home Page</Text></Button>
             </Content>
           </Footer>
-          </Container>        
+          </Container>
       )
     }
   }
