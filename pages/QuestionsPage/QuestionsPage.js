@@ -10,7 +10,7 @@ export default class QuestionsPage extends Component {
     super(props) 
     this.state = {
       quiz: [],
-      selectedQuestions: new Set(),
+      selectedAnswers: new Set(),
     }
   }
 
@@ -47,25 +47,33 @@ export default class QuestionsPage extends Component {
 
 
   toggleSelected = (id) => {
+    console.log('id', id)
+    console.log('selectedAnswers', selectedAnswers)
     this.setState((state) => {
 
       // toggle the selection
-      const { selectedQuestions } = state
-      if (selectedQuestions.has(id)) selectedQuestions.delete(id)
-      else selectedQuestions.add(id)
+      const { selectedAnswers } = state
+      if (selectedAnswers.has(id)) selectedAnswers.delete(id)
+      else selectedAnswers.add(id)
 
       // update state
 
       return {
-        selectedQuestions,
+        selectedAnswers,
       }
     })
   }
 
 
   render() {
-    const { quiz, selectedQuestions } = this.state
-    // console.log('QuestionsPage: quiz', quiz)
+    const { quiz, selectedAnswers } = this.state
+    correctAnswers = []
+    wrongAnswers = []
+    quiz.forEach(question => correctAnswers.push(question.correct_answer))
+    quiz.forEach(question => wrongAnswers.push(question.wrong_answer_one, question.wrong_answer_two, question.wrong_answer_three))
+    console.log('correctAnswers', correctAnswers)
+    console.log('wrongAnswers', wrongAnswers)
+
       return (
         <Container>
           <Header style={styles.header}>
@@ -92,9 +100,11 @@ export default class QuestionsPage extends Component {
             </Right>
           </Header>
           <Quiz 
-            quiz={quiz} 
+            quiz={quiz}
+            correctAnswers={this.correctAnswers} 
+            wrongAnswers={this.wrongAnswers}
             toggleSelected={this.toggleSelected}
-            selectedQuestions={selectedQuestions}
+            selectedAnswers={selectedAnswers}
           />
           <Footer>
             <Content>

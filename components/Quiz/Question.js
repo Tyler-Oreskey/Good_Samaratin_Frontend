@@ -21,10 +21,22 @@ class Question extends Component {
         }
     }
 
-    onCheckboxSelect = () => {
-        const { toggleSelected, message } = this.props
-        const { id } = message
+    
+
+
+    onCheckboxSelect = (ev) => {
+        const targets = ev.target.value
+        console.log('targets', targets)
+        const { toggleSelected } = this.props
+        console.log('id', id)
+        // const { id } = message
         toggleSelected(id)
+    }
+
+    onAnswerClick = () => {
+        this.setState({
+            checked: !this.state.checked
+        })
     }
 
     // checkAnswer = (index, correctAnswer) => {
@@ -111,28 +123,30 @@ class Question extends Component {
 
     render() {
         const { quiz, selected } = this.props
-        const { question } = quiz
+        // const { selected } = this.state
+        const questions = []
+        quiz.forEach(question => questions.push(question))
         console.log('Question.js: quiz', quiz)
-        console.log('Question.js: question', question)
+        console.log('Question.js: question', questions)
 
         return (
             <Body>
                 {quiz.map(question => 
                     <Body key={question.id}>
                         <Text key={question.id} question={question.question} style={styles.questions}> {question.question}</Text>
-                        <ListItem onPress={() => this.setState({ checked: !this.state.checked })}>
+                        <ListItem onPress={this.onAnswerClick}>
                             <CheckBox style={styles.checkBox} checked={this.state.checked} onChange={this.onCheckboxSelect} />
                             <Text style={styles.answers}>{question.correct_answer}</Text>
                         </ListItem>
-                        <ListItem onPress={() => this.setState({ checked: !this.state.checked })}>
+                        <ListItem onPress={this.onAnswerClick}>
                             <CheckBox style={styles.checkBox} checked={this.state.checked} />
                             <Text style={styles.answers}>{question.wrong_answer_one}</Text>
                         </ListItem>
-                        <ListItem onPress={() => this.setState({ checked: !this.state.checked })}>
+                        <ListItem onPress={this.onAnswerClick}>
                             <CheckBox style={styles.checkBox} checked={this.state.checked} />
                             <Text style={styles.answers}>{question.wrong_answer_two}</Text>
                         </ListItem>
-                        <ListItem onPress={() => this.setState({ checked: !this.state.checked })}>
+                        <ListItem onPress={this.onAnswerClick}>
                             <CheckBox style={styles.checkBox} checked={this.state.checked} />
                             <Text style={styles.answers}>{question.wrong_answer_three}</Text>
                         </ListItem>
