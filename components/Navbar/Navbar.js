@@ -4,15 +4,30 @@ import NavigationBar from 'react-native-navbar';
 import { Button, Body, Header, Left, Right, Title } from 'native-base'
 import { Actions } from 'react-native-router-flux';
 
-
 export default class Navbar extends Component {
+
   render() {
+
+    const { loginStatus, handleLogoutStatus } = this.props
+
+    var display;
+    //hide login button if user is logged in
+    if (loginStatus === true) {
+      display = loginStatus ? "none" : "flex";
+    }
+
+    var type = 'none'
+    //logout button if user is not logged in
+    if (loginStatus === true) {
+      type = 'flex'
+    }
+
       return (
         <Header style={styles.header}>
 
           <Left>
             <Button
-              style={styles.button}
+              style={[styles.button, {display}]}
               onPress={() => { Actions.login() }}>
               <Text style={styles.text}>Login</Text>
             </Button>
@@ -27,8 +42,8 @@ export default class Navbar extends Component {
 
           <Right>
             <Button
-              style={styles.button}
-              onPress={() => console.log('GoodBye')}>
+              style={[styles.button, {display: type}]}
+              onPress={this.functionCombined}>
               <Text style={styles.text}>Logout</Text>
             </Button>
           </Right>
@@ -36,7 +51,12 @@ export default class Navbar extends Component {
         </Header>
       )
     }
+    functionCombined = () => {
+        this.props.handleLogoutStatusCB;
+        { Actions.homePage(); }
+    }
   }
+
   const styles = {
     header: {
       marginTop: 20,
@@ -54,5 +74,5 @@ export default class Navbar extends Component {
     },
     text: {
       color: 'white'
-    }
+    },
   }

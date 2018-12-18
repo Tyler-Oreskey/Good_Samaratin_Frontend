@@ -9,7 +9,9 @@ export default class Loginpage extends Component {
       super(props)
       this.state = {
         showProgress: false,
-        user: ''
+        user: '',
+        username: '',
+        password: ''
       }
     }
 
