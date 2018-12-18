@@ -5,15 +5,16 @@ import Question from './Question'
 
 
 export default class Quiz extends Component {
+    
 
     render() {
-        let { quiz } = this.props
-        let { questions } = quiz
+        let { quiz, toggleSelected, selectedAnswers, correctAnswers, wrongAnswers} = this.props
+        
+        
         console.log('Quiz.js: quiz', this.props.quiz)
-        console.log('Quiz.js: questions', questions)
 
 
-        if (!questions) {
+        if (!this.props.quiz[0]) {
             return (
                 <Container>
                     <Text>Loading Quiz...</Text>
@@ -26,9 +27,15 @@ export default class Quiz extends Component {
             <Container>
                 <Content>
                     <Text style={styles.header}>{quiz.quizTitle}</Text>
-                    <Question quiz={quiz} />
+                    <Question 
+                        quiz={quiz}
+                        correctAnswers={correctAnswers}
+                        wrongAnswers={wrongAnswers}
+                        toggleSelected={toggleSelected}
+                        selected={selectedAnswers.has(quiz.id)} 
+                    />
                 </Content>
-                    <Button style={styles.submitButton} full large rounded primary onPress={() => { Actions.resultsPage() }}><Text style={styles.text}>Submit {questions.length} Questions</Text></Button>
+                    <Button style={styles.submitButton} full large rounded primary onPress={() => { Actions.resultsPage() }}><Text style={styles.text}>Submit {quiz.length} Questions</Text></Button>
             </Container>
         </Container> 
         )
