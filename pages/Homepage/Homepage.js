@@ -8,6 +8,8 @@ import Navbar from '../../components//Navbar/Navbar'
 import HomepageQuotes from '../../components/HomepageQuotes/HomepageQuotes'
 import Loginpage from '../Loginpage/Loginpage'
 
+import store from '../../Store';
+
 
 export default class Homepage extends Component {
   constructor(){
@@ -42,8 +44,9 @@ export default class Homepage extends Component {
   }
 
   render() {
-    console.log('homepage', this.props.loginStatus);
-    const { loginStatus } = this.props
+
+    // const { loginStatus } = this.props
+    const loginStatus = store.getState().loginStatus;
 
       return (
         <Container>
