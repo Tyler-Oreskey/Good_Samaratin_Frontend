@@ -8,122 +8,19 @@ class Question extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            incorrectAnswer: false,
-            correctAnswer: false,
-            showNextQuestionButton: false,
-            endQuiz: false,
-            currentQuestionIndex: 0,
-            buttons: {},
-            buttonClasses: {},
-            correct: [],
-            incorrect: [],
             checked: false,
         }
+    this.toggle = this.toggle.bind(this);
     }
 
-    
-
-
-    onCheckboxSelect = (ev) => {
-        const targets = ev.target.value
-        console.log('targets', targets)
-        const { toggleSelected } = this.props
-        console.log('id', id)
-        // const { id } = message
-        toggleSelected(id)
+    toggle() {
+        this.setState({ checked: !this.state.checked });
     }
 
-    onAnswerClick = () => {
-        this.setState({
-            checked: !this.state.checked
-        })
-    }
-
-    // checkAnswer = (index, correctAnswer) => {
-    //     const { correct, incorrect, currentQuestionIndex } = this.state
-    //     if (index == correctAnswer) {
-    //         if (incorrect.indexOf(currentQuestionIndex) < 0 && correct.indexOf(currentQuestionIndex) < 0) {
-    //             correct.push(currentQuestionIndex)
-    //         }
-
-    //         this.setState({
-    //             correctAnswer: true,
-    //             incorrectAnswer: false,
-    //             showNextQuestionButton: true,
-    //             correct: correct
-    //         })
-
-    //         let disabledAll = {
-    //             0: { disabled: true },
-    //             1: { disabled: true },
-    //             2: { disabled: true },
-    //             3: { disabled: true }
-    //         }
-
-    //         this.setState((prevState) => {
-    //             const buttons = Object.assign(
-    //                 {},
-    //                 prevState.buttons,
-    //                 {
-    //                     ...disabledAll,
-    //                     [index - 1]: {
-    //                         className: (index == correctAnswer) ? "correct" : ""
-    //                     },
-    //                 }
-    //             );
-    //             return { buttons };
-    //         })
-    //     } else {
-    //         if (correct.indexOf(currentQuestionIndex) < 0 && incorrect.indexOf(currentQuestionIndex) < 0) {
-    //             incorrect.push(currentQuestionIndex)
-    //         }
-
-    //         this.setState({
-    //             incorrectAnswer: true,
-    //             correctAnswer: false,
-    //             incorrect: incorrect
-    //         })
-    //         this.setState((prevState) => {
-    //             const buttons = Object.assign(
-    //                 {},
-    //                 prevState.buttons,
-    //                 {
-    //                     [index - 1]: {
-    //                         disabled: !prevState.buttons[index - 1]
-    //                     }
-    //                 }
-    //             );
-    //             return { buttons };
-    //         });
-    //     }
-    // }
-
-    // nextQuestion = (currentQuestionIndex) => {
-    //     const { quiz } = this.props
-
-    //     var initState = {
-    //         incorrectAnswer: false,
-    //         correctAnswer: false,
-    //         showNextQuestionButton: false,
-    //         buttons: {},
-    //     }
-
-    //     if (currentQuestionIndex + 1 == quiz.length) {
-    //         this.setState({
-    //             ...initState,
-    //             endQuiz: true
-    //         })
-    //     } else {
-    //         this.setState({
-    //             ...initState,
-    //             currentQuestionIndex: currentQuestionIndex + 1,
-    //         })
-    //     }
-    // }
 
     render() {
-        const { quiz, selected } = this.props
-        // const { selected } = this.state
+        const { quiz } = this.props
+        const { checked } = this.state
         const questions = []
         quiz.forEach(question => questions.push(question))
         console.log('Question.js: quiz', quiz)
@@ -133,20 +30,20 @@ class Question extends Component {
             <Body>
                 {quiz.map(question => 
                     <Body key={question.id}>
-                        <Text key={question.id} question={question.question} style={styles.questions}> {question.question}</Text>
-                        <ListItem onPress={this.onAnswerClick}>
-                            <CheckBox style={styles.checkBox} checked={this.state.checked} onChange={this.onCheckboxSelect} />
+                        <Text question={question.question} style={styles.questions}> {question.question}</Text>
+                        <ListItem onPress={this.toggle}>
+                            <CheckBox style={styles.checkBox} checked={this.state.checked} />
                             <Text style={styles.answers}>{question.correct_answer}</Text>
                         </ListItem>
-                        <ListItem onPress={this.onAnswerClick}>
+                        <ListItem onPress={this.toggle}>
                             <CheckBox style={styles.checkBox} checked={this.state.checked} />
                             <Text style={styles.answers}>{question.wrong_answer_one}</Text>
                         </ListItem>
-                        <ListItem onPress={this.onAnswerClick}>
+                        <ListItem onPress={this.toggle}>
                             <CheckBox style={styles.checkBox} checked={this.state.checked} />
                             <Text style={styles.answers}>{question.wrong_answer_two}</Text>
                         </ListItem>
-                        <ListItem onPress={this.onAnswerClick}>
+                        <ListItem onPress={this.toggle}>
                             <CheckBox style={styles.checkBox} checked={this.state.checked} />
                             <Text style={styles.answers}>{question.wrong_answer_three}</Text>
                         </ListItem>
