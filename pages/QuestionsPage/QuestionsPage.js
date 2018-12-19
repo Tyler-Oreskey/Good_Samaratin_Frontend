@@ -109,9 +109,6 @@ export default class QuestionsPage extends Component {
               </Button>
             </Right>
           </Header>
-<<<<<<< HEAD
-          <Quiz
-=======
           <Content>
 
           <Card>
@@ -247,7 +244,6 @@ export default class QuestionsPage extends Component {
           </Content>
           
           {/* <Quiz 
->>>>>>> 14-for-presentation
             quiz={quiz}
             correctAnswers={this.correctAnswers}
             wrongAnswers={this.wrongAnswers}
