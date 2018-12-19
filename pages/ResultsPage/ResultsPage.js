@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { Container, Header, Content, Footer, Button, Left, Right, Body, Title } from 'native-base'
+import { Container, Header, Footer, Button, Left, Right, Body } from 'native-base'
 
 export default class ResultsPage extends Component {
 
@@ -25,6 +25,7 @@ export default class ResultsPage extends Component {
             </Right>
           </Header>
           <Container>
+            <Text>Congratulations! You Answered 4 Out Of 5 Correctly</Text>
           </Container>
           <Footer>
           </Footer>
