@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Dimensions} from 'react-native';
+import {Platform, StyleSheet, Text, View, Dimensions, Image} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Container, Header, Content, Footer, Button, Left, Right, Body, Title } from 'native-base'
 
@@ -51,7 +51,10 @@ export default class Homepage extends Component {
       return (
         <Container>
           <Navbar loginStatus={this.props.loginStatus}/>
-          <Container>
+          <Container >
+            <Body style={styles.imageContainer}>
+              <Image style={styles.tyleImage} source={require('../../Logo/TylerHomePage.jpg')} />
+            </Body>
             <HomepageQuotes quotes={this.state.quotes} author={this.state.author}/>
             <Content>
               <Button disabled={loginStatus === false} loginStatus={this.props.loginStatus} style={styles.button} full large rounded primary onPress={() => { Actions.questionsPage(); }}><Text style={styles.text}>Quiz</Text></Button>
@@ -68,11 +71,12 @@ export default class Homepage extends Component {
   }
 
 const height = Dimensions.get('window').height
+const width = Dimensions.get('window').width
 
 const styles = {
   container: {
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   text: {
     color: 'white',
@@ -83,5 +87,17 @@ const styles = {
     marginTop: 25,
     marginLeft: 15,
     marginRight: 15
+  },
+  tyleImage: {
+    width: width * 0.9,
+    height: height * 0.4,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 90,
+    marginBottom: 90, 
   }
 }
