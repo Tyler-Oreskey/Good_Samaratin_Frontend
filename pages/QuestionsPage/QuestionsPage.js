@@ -118,19 +118,19 @@ export default class QuestionsPage extends Component {
               </Body>
             </ListItem>
             <List>
-              <ListItem>
+              <ListItem onPress={() => this.setState({ checked17: !this.state.checked17 })} >
                 <CheckBox checked={this.state.checked17} onPress={() => this.setState({ checked17: !this.state.checked17 })} />
                 <Text style={styles.ansText}>Roll them on their stomach.</Text>
               </ListItem>
-              <ListItem>
+              <ListItem onPress={() => this.setState({ checked18: !this.state.checked18 })} >
                 <CheckBox checked={this.state.checked18} onPress={() => this.setState({ checked18: !this.state.checked18 })} />
                 <Text style={styles.ansText}>Hold their head still.</Text>
               </ListItem>
-              <ListItem>
+              <ListItem onPress={() => this.setState({ checked19: !this.state.checked19 })} >
                 <CheckBox checked={this.state.checked19} onPress={() => this.setState({ checked19: !this.state.checked19 })} />
                 <Text style={styles.ansText}>Start recording them with your phone.</Text>
               </ListItem>
-              <ListItem>
+              <ListItem onPress={() => this.setState({ checked20: !this.state.checked20 })} >
                 <CheckBox checked={this.state.checked20} onPress={() => this.setState({ checked20: !this.state.checked20 })} />
                 <Text style={styles.ansText}>Call 911.</Text>
               </ListItem>

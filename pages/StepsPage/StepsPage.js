@@ -3,6 +3,7 @@ import {Platform, StyleSheet, Image, View, Dimensions, AsyncStorage, FlatList} f
 import { Actions } from 'react-native-router-flux';
 import { Container, Header, Content, Footer, Button, Left, Right, Body, Title, Card, CardItem, Text } from 'native-base'
 import CallForHelpButton from '../../components/CallForHelpButton/CallForHelpButton'
+// import Tts from 'react-native-tts'
 
 export default class StepsPage extends Component {
   constructor(props){
@@ -123,6 +124,12 @@ export default class StepsPage extends Component {
     }
   }
 
+
+  // speak = () => {
+  //   Tts.speak('Hello')
+  // }
+
+
   render() {
 
     console.log("In Render >>>> ", this.state.currentEmergency)
@@ -153,7 +160,6 @@ export default class StepsPage extends Component {
             renderItem={ ({item}) => this.renderItem(item) }
             extraData={ this.state }
             initialNumToRender={45}
-
           />
         </Content>
         <Footer>

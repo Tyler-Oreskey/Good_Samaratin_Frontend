@@ -5,7 +5,7 @@ import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } fro
 
 
 const args = {
-    number: '2036133326', // String value with the number to call
+    number: '9702148630', // String value with the number to call
     prompt: false // Optional boolean property. Determines if the user should be prompt prior to the call 
 }
 
