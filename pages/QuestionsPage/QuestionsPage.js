@@ -224,19 +224,19 @@ export default class QuestionsPage extends Component {
             <List>
               <ListItem>
                 <CheckBox checked={this.state.checked17} onPress={() => this.setState({ checked17: !this.state.checked17 })} />
-                <Text>    Roll them on their stomach.</Text>
+                <Text style={styles.ansText}>Roll them on their stomach.</Text>
               </ListItem>
               <ListItem>
                 <CheckBox checked={this.state.checked18} onPress={() => this.setState({ checked18: !this.state.checked18 })} />
-                <Text>    Hold their head still.</Text>
+                <Text style={styles.ansText}>Hold their head still.</Text>
               </ListItem>
               <ListItem>
                 <CheckBox checked={this.state.checked19} onPress={() => this.setState({ checked19: !this.state.checked19 })} />
-                <Text>    Start recording them with your phone.</Text>
+                <Text style={styles.ansText}>Start recording them with your phone.</Text>
               </ListItem>
               <ListItem>
                 <CheckBox checked={this.state.checked20} onPress={() => this.setState({ checked20: !this.state.checked20 })} />
-                <Text>    Call 911.</Text>
+                <Text style={styles.ansText}>Call 911.</Text>
               </ListItem>
             </List>
 
@@ -255,9 +255,6 @@ export default class QuestionsPage extends Component {
               <Content>
                 <Button full large onPress={() => { Actions.resultsPage() }} style={styles.submitButton}><Text style={styles.text} >Submit Quiz</Text></Button>
               </Content>
-            {/* <Content>
-              <Button full large danger onPress={() => { Actions.homePage() }}><Text>Home Page</Text></Button>
-            </Content> */}
           </Footer>
           </Container>
       )
@@ -284,5 +281,11 @@ const styles = {
   },
   text: {
     color: 'white'
-  }
+  },
+  ansText: {
+    fontSize: 14,
+    marginRight: 10,
+    marginLeft:10,
+  },
+  
 }
