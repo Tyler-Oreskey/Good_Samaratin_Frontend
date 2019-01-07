@@ -1,5 +1,7 @@
 # Good_Samaratin_Frontend
 
+**project video: https://www.youtube.com/watch?v=A_fjINvsucw&feature=youtu.be**
+
 Good Samaratin is a full-stack ios application that allows the user to to see what needs to be done when there is an emergency.
 The emergencies are anything injury related, and each emergency has a list of steps on how to help yourself or someone else.
 The emergencies and list of steps are retrieved from the Good Samaratin backend using get requests from the API live on Heroku.
