@@ -10,3 +10,12 @@ One very important feature is that the user can call 911 on every page just in c
 doesn't call 911, but its easy to change).
 One thing I would like to add is a user profile section that connects to a database of medical skills that a user can add to their own profile.
 Another thing I would add is a section in the user profile that keeps quiz scores from the quizzes that the user attempts, so that others can see how much they know.
+
+![Alt text](/screenshots/pic1.png?raw=true "Optional Title")
+![Alt text](/screenshots/pic2.png?raw=true "Optional Title")
+![Alt text](/screenshots/pic3.png?raw=true "Optional Title")
+![Alt text](/screenshots/pic4.png?raw=true "Optional Title")
+![Alt text](/screenshots/pic5.png?raw=true "Optional Title")
+![Alt text](/screenshots/pic6.png?raw=true "Optional Title")
+![Alt text](/screenshots/pic7.png?raw=true "Optional Title")
+![Alt text](/screenshots/pic8.png?raw=true "Optional Title")
