@@ -64,6 +64,8 @@ export default class EmergencyPage extends Component {
   }
 }
 
+
+
     render() {
       const { loginStatus } = this.props
       return (
@@ -108,7 +110,7 @@ const width = Dimensions.get('window').width
 const styles = StyleSheet.create({
   container: {
     borderRadius: 4,
-    width: 125,
+    width: width * 0.333,
     height: height * 0.15,
     borderWidth: 2,
     fontSize: 20,
@@ -118,7 +120,7 @@ const styles = StyleSheet.create({
   },
   containerOdd: {
     borderRadius: 4,
-    width: 124,
+    width: width * 0.333,
     height: height * 0.15,
     borderWidth: 2,
     fontSize: 20,

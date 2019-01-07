@@ -58,7 +58,8 @@
 		C6C92F121E4745548F742AD9 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C5D68A849CB4F789E130D94 /* Feather.ttf */; };
 		CCAEE6694CBB4A249ED52F2F /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2834DE725D47718F20C965 /* libRNGestureHandler.a */; };
 		E567222F1EFD45B89C467C6D /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A99CA3C95C72460599E57330 /* rubicon-icon-font.ttf */; };
-		180D95B8AF6843E6AEF5BEA9 /* libTextToSpeech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 304DCFB49A5A47FDA4A04350 /* libTextToSpeech.a */; };
+		7CCEEC60E29741888D9B5C1C /* libTextToSpeech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D689C797F0B544B9BCCD659C /* libTextToSpeech.a */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -408,8 +409,8 @@
 		E90F58F45E2046CFA39F10C9 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		EFB37A6A133D4BB4A5D1CC61 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		FB4AEEB681F84E84A6A967F9 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
-		A6F64C1379054BED9630B687 /* TextToSpeech.xcodeproj */ = {isa = PBXFileReference; name = "TextToSpeech.xcodeproj"; path = "../node_modules/react-native-tts/ios/TextToSpeech.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		304DCFB49A5A47FDA4A04350 /* libTextToSpeech.a */ = {isa = PBXFileReference; name = "libTextToSpeech.a"; path = "libTextToSpeech.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		AB1DFC3AB0FB4F0C82E81D6B /* TextToSpeech.xcodeproj */ = {isa = PBXFileReference; name = "TextToSpeech.xcodeproj"; path = "../node_modules/react-native-tts/ios/TextToSpeech.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		D689C797F0B544B9BCCD659C /* libTextToSpeech.a */ = {isa = PBXFileReference; name = "libTextToSpeech.a"; path = "libTextToSpeech.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,7 +440,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				CCAEE6694CBB4A249ED52F2F /* libRNGestureHandler.a in Frameworks */,
 				2C117B0651D445B58166A00B /* libRNVectorIcons.a in Frameworks */,
-				180D95B8AF6843E6AEF5BEA9 /* libTextToSpeech.a in Frameworks */,
+				7CCEEC60E29741888D9B5C1C /* libTextToSpeech.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +630,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				9D56F4ED06DB43B8A5BEDC6E /* RNGestureHandler.xcodeproj */,
 				FB4AEEB681F84E84A6A967F9 /* RNVectorIcons.xcodeproj */,
-				A6F64C1379054BED9630B687 /* TextToSpeech.xcodeproj */,
+				AB1DFC3AB0FB4F0C82E81D6B /* TextToSpeech.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -818,6 +819,9 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 2X5QH2FJ2V;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1409,6 +1413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 2X5QH2FJ2V;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1416,6 +1421,7 @@
 					"$(SRCROOT)/../node_modules/react-native-tts/ios/TextToSpeech",
 				);
 				INFOPLIST_FILE = Good_Samaratin_Frontend/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1433,6 +1439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2X5QH2FJ2V;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1440,6 +1447,7 @@
 					"$(SRCROOT)/../node_modules/react-native-tts/ios/TextToSpeech",
 				);
 				INFOPLIST_FILE = Good_Samaratin_Frontend/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

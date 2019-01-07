@@ -114,25 +114,25 @@ export default class QuestionsPage extends Component {
           <Card>
             <ListItem>
               <Body>
-                <Text style={{ fontWeight: 'bold' }}>You find a person who is unresponsive and not breathing, what is the first thing you should do?</Text>
+                <Text style={{ fontWeight: 'bold' }}>What should you do if someone is having a seizure</Text>
               </Body>
             </ListItem>
             <List>
-                <ListItem onPress={() => this.setState({ checked1: !this.state.checked1 })}>
-                <CheckBox checked={this.state.checked1} onPress={() => this.setState({ checked1: !this.state.checked1 })} />
-                <Text>    Call 911.</Text>
+              <ListItem onPress={() => this.setState({ checked17: !this.state.checked17 })} >
+                <CheckBox checked={this.state.checked17} onPress={() => this.setState({ checked17: !this.state.checked17 })} />
+                <Text style={styles.ansText}>Roll them on their stomach.</Text>
               </ListItem>
-                <ListItem onPress={() => this.setState({ checked2: !this.state.checked2 })}>
-                <CheckBox checked={this.state.checked2} onPress={() => this.setState({ checked2: !this.state.checked2 })} />
-                <Text>    Check for a pulse.</Text>
+              <ListItem onPress={() => this.setState({ checked18: !this.state.checked18 })} >
+                <CheckBox checked={this.state.checked18} onPress={() => this.setState({ checked18: !this.state.checked18 })} />
+                <Text style={styles.ansText}>Hold their head still.</Text>
               </ListItem>
-                <ListItem onPress={() => this.setState({ checked3: !this.state.checked3 })}>
-                <CheckBox checked={this.state.checked3} onPress={() => this.setState({ checked3: !this.state.checked3 })} />
-                <Text>    Start CPR.</Text>
+              <ListItem onPress={() => this.setState({ checked19: !this.state.checked19 })} >
+                <CheckBox checked={this.state.checked19} onPress={() => this.setState({ checked19: !this.state.checked19 })} />
+                <Text style={styles.ansText}>Start recording them with your phone.</Text>
               </ListItem>
-                <ListItem onPress={() => this.setState({ checked4: !this.state.checked4 })}>
-                <CheckBox checked={this.state.checked4} onPress={() => this.setState({ checked4: !this.state.checked4 })} />
-                <Text>    Check for ID.</Text>
+              <ListItem onPress={() => this.setState({ checked20: !this.state.checked20 })} >
+                <CheckBox checked={this.state.checked20} onPress={() => this.setState({ checked20: !this.state.checked20 })} />
+                <Text style={styles.ansText}>Call 911.</Text>
               </ListItem>
             </List>
           </Card>
@@ -140,25 +140,51 @@ export default class QuestionsPage extends Component {
           <Card>
             <ListItem>
               <Body>
-                <Text style={{ fontWeight: 'bold' }}>Your best friend is chowing down on a bratwurst, when he/she grabs his neck and starts hacking, you know they’re is choking, what is the first thing you should do?</Text>
+                  <Text style={{ fontWeight: 'bold' }}>You notice that a person has experienced a significant amount of blood loss, has pale skin color, and is becoming confused. What is most likely the cause?</Text>
+              </Body>
+            </ListItem>
+            <List>
+                <ListItem onPress={() => this.setState({ checked1: !this.state.checked1 })}>
+                <CheckBox checked={this.state.checked1} onPress={() => this.setState({ checked1: !this.state.checked1 })} />
+                <Text style={styles.ansText}>Seizure</Text>
+              </ListItem>
+                <ListItem onPress={() => this.setState({ checked2: !this.state.checked2 })}>
+                <CheckBox checked={this.state.checked2} onPress={() => this.setState({ checked2: !this.state.checked2 })} />
+                <Text style={styles.ansText}>Stroke</Text>
+              </ListItem>
+                <ListItem onPress={() => this.setState({ checked3: !this.state.checked3 })}>
+                <CheckBox checked={this.state.checked3} onPress={() => this.setState({ checked3: !this.state.checked3 })} />
+                <Text style={styles.ansText}>Low Blood Sugar</Text>
+              </ListItem>
+                <ListItem onPress={() => this.setState({ checked4: !this.state.checked4 })}>
+                <CheckBox checked={this.state.checked4} onPress={() => this.setState({ checked4: !this.state.checked4 })} />
+                <Text style={styles.ansText}>Shock</Text>
+              </ListItem>
+            </List>
+          </Card>
+
+          <Card>
+            <ListItem>
+              <Body>
+                  <Text style={{ fontWeight: 'bold' }}>You are eating in a restaurant when a woman cries out. Her six-month-old child is turning blue around the mouth. He appears to be gagging but is not able to cry or take a breath. An older child had just given him some marbles to play with. What is the next step?</Text>
               </Body>
             </ListItem>
             <List>
               <ListItem onPress={() => this.setState({ checked5: !this.state.checked5 })}>
                 <CheckBox checked={this.state.checked5} onPress={() => this.setState({ checked5: !this.state.checked5 })} />
-                <Text>    Try to pull the bratwurst out of their throat.</Text>
+                <Text style={styles.ansText}>Begin CPR</Text>
               </ListItem>
               <ListItem onPress={() => this.setState({ checked6: !this.state.checked6 })}>
                 <CheckBox checked={this.state.checked6} onPress={() => this.setState({ checked6: !this.state.checked6 })} />
-                <Text>    Try to burp him/her.</Text>
+                  <Text style={styles.ansText}>Attempt rescue breaths then compressions</Text>
               </ListItem>
               <ListItem onPress={() => this.setState({ checked7: !this.state.checked7 })}>
                 <CheckBox checked={this.state.checked7} onPress={() => this.setState({ checked7: !this.state.checked7 })} />
-                <Text>    Perform the Heimlich maneuver.</Text>
+                <Text style={styles.ansText}>Deliver back blows and chest thrusts</Text>
               </ListItem>
               <ListItem onPress={() => this.setState({ checked8: !this.state.checked8 })}>
                 <CheckBox checked={this.state.checked8} onPress={() => this.setState({ checked8: !this.state.checked8 })} />
-                <Text>    Give him/her some water.</Text>
+                <Text style={styles.ansText}>Blind finger Sweep</Text>
               </ListItem>
             </List>
           </Card>
@@ -172,19 +198,19 @@ export default class QuestionsPage extends Component {
             <List>
               <ListItem onPress={() => this.setState({ checked9: !this.state.checked9 })}>
                 <CheckBox checked={this.state.checked9} onPress={() => this.setState({ checked9: !this.state.checked9 })} />
-                <Text>    Give the patient a sternum rub to check their responsiveness, even if he/she is making noise.</Text>
+                <Text style={styles.ansText}>Give the patient a sternum rub to check their responsiveness, even if he/she is making noise.</Text>
               </ListItem>
               <ListItem onPress={() => this.setState({ checked10: !this.state.checked10 })}>
                 <CheckBox checked={this.state.checked10} onPress={() => this.setState({ checked10: !this.state.checked10 })} />
-                <Text>    Take a photo to send to your friends.</Text>
+                <Text style={styles.ansText}>Take a photo to send to your friends.</Text>
               </ListItem>
               <ListItem onPress={() => this.setState({ checked11: !this.state.checked11 })}>
                 <CheckBox checked={this.state.checked11} onPress={() => this.setState({ checked11: !this.state.checked11 })} />
-                <Text>    Assess the scene for potential hazards to you. You cannot help someone if you also become a patient/casualty.</Text>
+                <Text style={styles.ansText}>Assess the scene for potential hazards to you. You cannot help someone if you also become a patient/casualty.</Text>
               </ListItem>
               <ListItem onPress={() => this.setState({ checked12: !this.state.checked12 })}>
                 <CheckBox checked={this.state.checked12} onPress={() => this.setState({ checked12: !this.state.checked12 })} />
-                <Text>    Run to the patient.</Text>
+                <Text style={styles.ansText}>Run to the patient.</Text>
               </ListItem>
             </List>
           </Card>
@@ -192,55 +218,29 @@ export default class QuestionsPage extends Component {
           <Card>
             <ListItem>
               <Body>
-                <Text style={{ fontWeight: 'bold' }}>When should you help a patient.</Text>
+                  <Text style={{ fontWeight: 'bold' }}>You find a child that is unresponsive. After yelling for help, you check and find the child is not breathing. What is the next step?</Text>
               </Body>
             </ListItem>
             <List>
               <ListItem onPress={() => this.setState({ checked13: !this.state.checked13 })}>
                 <CheckBox checked={this.state.checked13} onPress={() => this.setState({ checked13: !this.state.checked13 })} />
-                <Text>    Never.</Text>
+                <Text style={styles.ansText}>Leave the child and search for an AED</Text>
               </ListItem>
               <ListItem onPress={() => this.setState({ checked14: !this.state.checked14 })}>
                 <CheckBox checked={this.state.checked14} onPress={() => this.setState({ checked14: !this.state.checked14 })} />
-                <Text>    Whenever you want.</Text>
+                <Text style={styles.ansText}>Deliver rescue breaths as most cardiac arrest occur due to breathing problems</Text>
               </ListItem>
               <ListItem onPress={() => this.setState({ checked15: !this.state.checked15 })}>
                 <CheckBox checked={this.state.checked15} onPress={() => this.setState({ checked15: !this.state.checked15 })} />
-                <Text>    Only on Tuesdays.</Text>
+                <Text style={styles.ansText}>Begin back blows and chest thrusts</Text>
               </ListItem>
               <ListItem onPress={() => this.setState({ checked16: !this.state.checked16 })}>
                 <CheckBox checked={this.state.checked16} onPress={() => this.setState({ checked16: !this.state.checked16 })} />
-                <Text>    When you are the most qualified person there and you are willing to help.</Text>
+                  <Text style={styles.ansText}>Deliver 30 chest compressions.</Text>
               </ListItem>
             </List>
           </Card>
 
-          <Card>
-            <ListItem>
-              <Body>
-                <Text style={{ fontWeight: 'bold' }}>What should you do if someone is having a seizure</Text>
-              </Body>
-            </ListItem>
-            <List>
-              <ListItem>
-                <CheckBox checked={this.state.checked17} onPress={() => this.setState({ checked17: !this.state.checked17 })} />
-                <Text>    Roll them on their stomach.</Text>
-              </ListItem>
-              <ListItem>
-                <CheckBox checked={this.state.checked18} onPress={() => this.setState({ checked18: !this.state.checked18 })} />
-                <Text>    Hold their head still.</Text>
-              </ListItem>
-              <ListItem>
-                <CheckBox checked={this.state.checked19} onPress={() => this.setState({ checked19: !this.state.checked19 })} />
-                <Text>    Start recording them with your phone.</Text>
-              </ListItem>
-              <ListItem>
-                <CheckBox checked={this.state.checked20} onPress={() => this.setState({ checked20: !this.state.checked20 })} />
-                <Text>    Call 911.</Text>
-              </ListItem>
-            </List>
-
-          </Card>
           </Content>
           
           {/* <Quiz 
@@ -255,9 +255,6 @@ export default class QuestionsPage extends Component {
               <Content>
                 <Button full large onPress={() => { Actions.resultsPage() }} style={styles.submitButton}><Text style={styles.text} >Submit Quiz</Text></Button>
               </Content>
-            {/* <Content>
-              <Button full large danger onPress={() => { Actions.homePage() }}><Text>Home Page</Text></Button>
-            </Content> */}
           </Footer>
           </Container>
       )
@@ -284,5 +281,10 @@ const styles = {
   },
   text: {
     color: 'white'
-  }
+  },
+  ansText: {
+    fontSize: 14,
+    marginRight: 10,
+    marginLeft:10,
+  },
 }
