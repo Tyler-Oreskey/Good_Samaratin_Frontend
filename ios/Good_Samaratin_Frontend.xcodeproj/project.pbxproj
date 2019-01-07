@@ -59,6 +59,7 @@
 		CCAEE6694CBB4A249ED52F2F /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2834DE725D47718F20C965 /* libRNGestureHandler.a */; };
 		E567222F1EFD45B89C467C6D /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A99CA3C95C72460599E57330 /* rubicon-icon-font.ttf */; };
 		7CCEEC60E29741888D9B5C1C /* libTextToSpeech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D689C797F0B544B9BCCD659C /* libTextToSpeech.a */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
