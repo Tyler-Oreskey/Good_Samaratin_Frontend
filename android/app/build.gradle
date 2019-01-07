@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-tts')
     compile project(':react-native-vector-icons')
     compile project(':react-native-navbar-color')
     compile project(':react-native-gesture-handler')
